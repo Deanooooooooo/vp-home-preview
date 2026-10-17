@@ -409,6 +409,25 @@ p{margin:0}
 .eu-city .r1,.eu-city .r2{transform-box:fill-box;transform-origin:center}
 .map-cap{position:absolute;right:0;bottom:-6px;margin:0;font:500 12px/1 var(--mono);color:var(--muted);letter-spacing:.04em}
 
+
+/* mini calendar in the call card */
+.cc-cal{margin:0 20px 18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.cal-head{display:flex;justify-content:space-between;padding:10px 14px;background:var(--surface);font:500 11px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.cal-slot{display:grid;grid-template-columns:64px 1fr;align-items:center;padding:10px 14px;border-top:1px solid var(--surface-2);font-size:14px;color:var(--muted)}
+.cal-slot:nth-child(2){border-top:0}
+.cal-slot b{font:600 13px/1 var(--mono);color:var(--ink-2)}
+.cal-slot.busy span{color:var(--ink-2)}
+.cal-state{position:relative;display:block;height:20px;overflow:hidden;perspective:300px}
+.cal-state em{position:absolute;left:0;top:0;font-style:normal;line-height:20px;transition:transform .55s var(--ease),opacity .55s var(--ease);transform-origin:50% 50%}
+.cal-state .booked{transform:rotateX(-90deg) translateY(10px);opacity:0;color:var(--a2-ink);font-weight:500}
+#calTarget{transition:background-color .5s var(--ease)}
+#calTarget.is-booked{background:var(--a2-tint)}
+#calTarget.is-booked .free{transform:rotateX(90deg) translateY(-10px);opacity:0}
+#calTarget.is-booked .booked{transform:none;opacity:1}
+#calTarget.is-booked b{color:var(--a1)}
+.cc-feed{min-height:0!important}
+.js .cc-feed li:not(.show){visibility:hidden}
+
 /* scroll-driven reveals: motion tied to reading, no hover gimmicks */
 @supports (animation-timeline: view()){
   .section-head,.studio-controls,.app-window,.code,.calc,.price-card,.stack-table,.faq-list,.closer-in,.who-card,.lang-tile,.steps-grid li,.tension-grid article{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 60%}

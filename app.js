@@ -182,16 +182,29 @@
   // signup placeholder (preview)
   document.querySelectorAll("[data-signup]").forEach(a => a.addEventListener("click", () => { const n = $("#signupNote"); if (n) { n.hidden = false; } }));
 
-  // call card: plays out when it comes into view
-  const feed = [...document.querySelectorAll(".cc-feed li")], ccTime = $("#ccTime");
+  // call card: the call plays as you scroll; the 10:30 slot flips to booked
+  const feed = [...document.querySelectorAll(".cc-feed li")], ccTime = $("#ccTime"), calT = $("#calTarget"), hint = $("#ccHint");
+  const bookedAt = feed.findIndex(li => li.classList.contains("cc-ok"));
+  function setCall(n) {
+    feed.forEach((li, i) => li.classList.toggle("show", i < n));
+    const secs = Math.round(41 * n / feed.length);
+    ccTime.textContent = "00:" + String(secs).padStart(2, "0");
+    if (calT) calT.classList.toggle("is-booked", n > bookedAt);
+    if (hint) hint.textContent = n >= feed.length ? "Call ended · 00:41" : n ? "Call in progress" : "Scroll to play the call";
+  }
   if (feed.length) {
-    const run = () => {
-      if (reduce) { feed.forEach(li => li.classList.add("show")); ccTime.textContent = "00:41"; return; }
-      feed.forEach((li, i) => setTimeout(() => li.classList.add("show"), 350 + i * 900));
-      let s = 0; const t = setInterval(() => { s++; ccTime.textContent = "00:" + String(s).padStart(2, "0"); if (s >= 41) clearInterval(t); }, 6900 / 41);
-    };
-    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { run(); io.disconnect(); } }), { threshold: 0.35 });
-    io.observe($(".callcard"));
+    if (reduce) setCall(feed.length);
+    else {
+      const ul = $(".cc-feed"); setCall(feed.length); ul.style.minHeight = ul.offsetHeight + "px"; setCall(0);
+      const grid = $(".how-grid"); let last = -1;
+      const onScroll = () => {
+        const r = $(".callcard").getBoundingClientRect(), start = innerHeight * 0.55, end = -r.height * 0.25;
+        const p = Math.min(1, Math.max(0, (start - r.top) / (start - end)));
+        const n = Math.min(feed.length, Math.floor(p * (feed.length + 1)));
+        if (n !== last) { last = n; setCall(n); }
+      };
+      addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    }
   }
 
   // nav scroll-spy

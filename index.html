@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=21">
+<link rel="stylesheet" href="styles.css?v=23">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","name":"Allovo","description":"European voice AI platform: AI phone agents for businesses, white label for agencies, API for developers."},
@@ -200,7 +200,13 @@
         <li class="cc-ev cc-ok"><i></i>Booked · confirmation sent by SMS</li>
         <li class="cc-ev"><i></i>Summary emailed to the practice</li>
       </ol>
-      <div class="cc-foot"><span>Dutch · EU region</span><span>Example call</span></div>
+      <div class="cc-cal" aria-label="Practice calendar, Thursday">
+        <div class="cal-head"><span>Thursday</span><span class="cal-src">Practice calendar</span></div>
+        <div class="cal-slot busy"><b>09:45</b><span>Check-up · Jansen</span></div>
+        <div class="cal-slot" id="calTarget"><b>10:30</b><span class="cal-state"><em class="free">Free</em><em class="booked">Booked · New patient</em></span></div>
+        <div class="cal-slot"><b>11:15</b><span>Free</span></div>
+      </div>
+      <div class="cc-foot"><span>Dutch · EU region</span><span class="cc-hint" id="ccHint">Scroll to play the call</span></div>
     </div>
   </div>
 </section>
@@ -407,7 +413,7 @@
 </footer>
 
 <audio id="player" preload="none"></audio>
-<script src="app.js?v=17"></script>
+<script src="app.js?v=19"></script>
 <script src="voice.js?v=7"></script>
 </body>
 </html>
