@@ -176,11 +176,31 @@
     }), { threshold: .45 }).observe(table);
   }
 
+
+  // Europe map: the active city pulses; louder ripples while the voice plays
+  const cities = [...document.querySelectorAll(".eu-city")], mapCap = document.getElementById("mapCap");
+  const LANGNAME = { nl: "Dutch", de: "German", fr: "French", bg: "Bulgarian", es: "Spanish", it: "Italian", pl: "Polish", ro: "Romanian", sv: "Swedish", en: "English" };
+  let lastCity = "";
+  function drawMap() {
+    if (!cities.length) return;
+    const tile = document.querySelector(".lang-tile.is-playing") || document.querySelector('.lang-tile[aria-pressed="true"]');
+    let code = tile ? tile.dataset.lang : "";
+    if (!code) { const b = document.querySelector('#boardList button[aria-current="true"] b'); code = b ? b.textContent.trim().toLowerCase() : "nl"; }
+    if (!player.paused && player.src.includes("greet-en") && !tile) code = "en";
+    if (code !== lastCity) {
+      lastCity = code;
+      cities.forEach(c => c.classList.toggle("on", c.dataset.lang === code));
+      const c = cities.find(c => c.dataset.lang === code);
+      if (c && mapCap) mapCap.textContent = c.querySelector("text").textContent + " · " + (LANGNAME[code] || "");
+    }
+    cities.forEach(c => c.classList.toggle("loud", c.dataset.lang === code && !player.paused));
+  }
+
   function frame(t) {
     sample(); smooth += (level - smooth) * .12;
-    drawRibbon(t); drawScope(t); drawMeters(); drawOrb(t);
+    drawRibbon(t); drawScope(t); drawMeters(); drawOrb(t); drawMap();
     requestAnimationFrame(frame);
   }
-  if (reduce) { drawRibbon(0); drawScope(0); drawOrb(0); player.addEventListener("timeupdate", () => { sample(); drawScope(0); drawMeters(); drawOrb(0); }); }
+  if (reduce) { drawRibbon(0); drawScope(0); drawOrb(0); drawMap(); setInterval(drawMap, 500); player.addEventListener("timeupdate", () => { sample(); drawScope(0); drawMeters(); drawOrb(0); }); }
   else requestAnimationFrame(frame);
 })();

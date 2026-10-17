@@ -391,6 +391,24 @@ p{margin:0}
 .ts-dot{width:7px;height:7px;border-radius:50%;background:var(--a2)}
 .trace-status.ok{color:var(--a2-ink)}
 
+
+/* dotted Europe map */
+.bench-top{display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:center}
+.map-wrap{position:relative}
+.eumap{width:100%;height:auto;display:block;overflow:visible}
+.eu-dots circle{fill:#C9CEDA}
+.eu-city .pt{fill:var(--a1);opacity:.35;transition:opacity .3s,fill .3s}
+.eu-city .r1,.eu-city .r2{fill:none;stroke:var(--a2);stroke-width:1.5;opacity:0}
+.eu-city text{font:500 10px var(--mono);fill:var(--ink-2);opacity:0;transition:opacity .3s}
+.eu-city.on .pt{opacity:1;fill:var(--a1)}
+.eu-city.on text{opacity:1}
+.eu-city.on .r1{animation:cityRing 1.8s ease-out infinite}
+.eu-city.on .r2{animation:cityRing 1.8s ease-out .6s infinite}
+.eu-city.on.loud .r1,.eu-city.on.loud .r2{animation-duration:1s}
+@keyframes cityRing{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(4.2)}}
+.eu-city .r1,.eu-city .r2{transform-box:fill-box;transform-origin:center}
+.map-cap{position:absolute;right:0;bottom:-6px;margin:0;font:500 12px/1 var(--mono);color:var(--muted);letter-spacing:.04em}
+
 /* scroll-driven reveals: motion tied to reading, no hover gimmicks */
 @supports (animation-timeline: view()){
   .section-head,.studio-controls,.app-window,.code,.calc,.price-card,.stack-table,.faq-list,.closer-in,.who-card,.lang-tile,.steps-grid li,.tension-grid article{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
@@ -405,7 +423,8 @@ p{margin:0}
   .hero-grid,.studio-grid,.pricing-grid,.faq-grid,.dev-grid{grid-template-columns:1fr}
   .hero h1{max-width:16ch}
   .bench-grid{grid-template-columns:repeat(3,1fr)}
-  .who-grid,.how-grid{grid-template-columns:1fr}
+  .who-grid,.how-grid,.bench-top{grid-template-columns:1fr}
+  .map-wrap{max-width:460px}
   .who-card{border-right:0;border-bottom:1px solid var(--line)}
   .who-card:last-child{border-bottom:0}
 }
