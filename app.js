@@ -1,11 +1,15 @@
 (() => {
-  // hero headline: word-by-word reveal
+  // hero headline: word-by-word reveal, keeps two-tone spans
   const h1 = document.querySelector(".hero h1");
   if (h1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const words = h1.textContent.trim().split(/\s+/);
-    h1.setAttribute("aria-label", h1.textContent.trim());
+    const label = h1.textContent.replace(/\s+/g, " ").trim();
+    let n = 0;
+    const wrap = (txt, cls) => txt.split(/(\s+)/).map(t => /^\s+$/.test(t) || !t ? t : `<span class="w${cls ? " " + cls : ""}" aria-hidden="true"><span style="--i:${n++}">${t}</span></span>`).join("");
+    let html = "";
+    h1.childNodes.forEach(nd => { html += nd.nodeType === 3 ? wrap(nd.textContent, "") : wrap(nd.textContent, nd.className || ""); });
+    h1.setAttribute("aria-label", label);
     h1.classList.add("js-split");
-    h1.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(" ");
+    h1.innerHTML = html;
   }
   const LANGS = [
     { c: "nl", name: "Dutch", native: "Nederlands", city: "Amsterdam", text: "Goedemiddag, tandartspraktijk De Vries, u spreekt met Mila. Waarmee kan ik u helpen?" },
@@ -94,10 +98,12 @@
   player.addEventListener("timeupdate", () => {
     if (!player.duration) return;
     const p = player.currentTime / player.duration;
+    const tile = document.querySelector(`.lang-tile[data-lang="${playingCode}"]`);
+    if (tile) { const ks = tile.querySelectorAll(".k"); const upto = Math.floor(Math.min(1, p * 1.12) * ks.length); ks.forEach((k, i) => k.classList.toggle("on", i < upto)); }
     barEls.forEach((b, i) => b.classList.toggle("on", i / barEls.length <= p && BOARD[current] && BOARD[current].c === playingCode));
   });
   player.addEventListener("pause", () => { if (playingCode) setPlayingUI(playingCode, false); });
-  player.addEventListener("ended", () => { barEls.forEach(b => b.classList.remove("on")); if (playingCode) setPlayingUI(playingCode, false); });
+  player.addEventListener("ended", () => { document.querySelectorAll(".k.on").forEach(k => k.classList.add("on")); barEls.forEach(b => b.classList.remove("on")); if (playingCode) setPlayingUI(playingCode, false); });
   player.addEventListener("play", () => { if (playingCode) setPlayingUI(playingCode, true); });
 
   $("#boardPlay").addEventListener("click", () => { stopCycle(); play(BOARD[current].c); });
@@ -119,7 +125,7 @@
     b.setAttribute("aria-label", `Play the ${l.name} greeting`);
     b.innerHTML = `<span class="lang-code"><span>${l.c[0].toUpperCase()}</span><span>${l.c[1].toUpperCase()}</span></span>
       <span class="lang-name">${l.native}</span><span class="lang-city">${l.city}</span>
-      <span class="lang-text" lang="${l.c}">${l.text}</span>
+      <span class="lang-text" lang="${l.c}">${l.text.split(" ").map(w => `<span class="k">${w}</span>`).join(" ")}</span>
       <span class="lang-play"><span class="play-ico" aria-hidden="true"></span>Listen</span>`;
     b.addEventListener("click", () => { stopCycle(); play(l.c); const bi = BOARD.findIndex(x => x.c === l.c); if (bi > -1) show(bi); });
     grid.appendChild(b);
@@ -159,6 +165,26 @@
 
   // signup placeholder (preview)
   document.querySelectorAll("[data-signup]").forEach(a => a.addEventListener("click", () => { const n = $("#signupNote"); if (n) { n.hidden = false; } }));
+
+  // call card: plays out when it comes into view
+  const feed = [...document.querySelectorAll(".cc-feed li")], ccTime = $("#ccTime");
+  if (feed.length) {
+    const run = () => {
+      if (reduce) { feed.forEach(li => li.classList.add("show")); ccTime.textContent = "00:41"; return; }
+      feed.forEach((li, i) => setTimeout(() => li.classList.add("show"), 350 + i * 900));
+      let s = 0; const t = setInterval(() => { s++; ccTime.textContent = "00:" + String(s).padStart(2, "0"); if (s >= 41) clearInterval(t); }, 6900 / 41);
+    };
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { run(); io.disconnect(); } }), { threshold: 0.35 });
+    io.observe($(".callcard"));
+  }
+
+  // nav scroll-spy
+  const links = [...document.querySelectorAll(".nav a")];
+  const spy = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  links.forEach(a => { const t = document.querySelector(a.getAttribute("href")); if (t) spy.observe(t); });
 
   // closer flaps
   const cf = $("#closerFlaps"); const word = "HALLO ALLÔ АЛО";

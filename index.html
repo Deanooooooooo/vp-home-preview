@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=10">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","name":"Allovo","description":"European voice AI platform: AI phone agents for businesses, white label for agencies, API for developers."},
@@ -62,7 +62,7 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Voice AI platform · built in the EU</p>
-      <h1>The European voice AI platform. Phone agents that sound local.</h1>
+      <h1>The European voice AI platform. <span class="dim">Phone agents that sound local.</span></h1>
       <p class="lede">Build an AI receptionist for your business, or sell voice agents under your own brand. Native voices in ten languages, data kept in the EU, one price per minute.</p>
       <div class="hero-actions">
         <a class="btn btn-signal btn-lg" href="#start">Build your agent</a>
@@ -96,27 +96,35 @@
   </div>
 </section>
 
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span>Goedemiddag</span><span>Guten Tag</span><span>Bonjour</span><span>Добър ден</span><span>Buenas tardes</span><span>Buongiorno</span><span>Dzień dobry</span><span>Bună ziua</span><span>Hej</span><span>Good afternoon</span>
+  <span>Goedemiddag</span><span>Guten Tag</span><span>Bonjour</span><span>Добър ден</span><span>Buenas tardes</span><span>Buongiorno</span><span>Dzień dobry</span><span>Bună ziua</span><span>Hej</span><span>Good afternoon</span>
+</div></div>
+
 <!-- 2 WHO -->
 <section class="who" id="who">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Who it’s for</p>
-      <h2>One platform, three ways in.</h2>
+      <h2>One platform. <span class="dim">Three ways in.</span></h2>
     </div>
     <div class="who-grid">
       <a class="who-card" href="#how">
+        <div class="vig" aria-hidden="true"><div class="vig-cal"><span class="vig-day">Thu</span><span class="vig-slot">10:30</span><span class="vig-ok">Booked</span></div><div class="vig-cal vig-cal-2"><span class="vig-day">Thu</span><span class="vig-slot">11:15</span><span class="vig-free">Free</span></div></div>
         <span class="tag">For businesses</span>
         <h3>An AI receptionist that answers every call.</h3>
         <p>Takes calls day and night, answers questions, books appointments in your calendar and sends you a summary. Live in an afternoon.</p>
         <span class="who-link">How it works</span>
       </a>
       <a class="who-card" href="#white-label">
+        <div class="vig" aria-hidden="true"><div class="vig-brand"><i style="background:#2E46F0"></i><i style="background:#0F8A6A"></i><i style="background:#D61F69"></i><span>app.youragency.eu</span></div></div>
         <span class="tag">For agencies</span>
         <h3>Sell voice agents under your own brand.</h3>
         <p>Your logo, domain and invoices. A sub-account per client, your own price per minute, your margin on every call.</p>
         <span class="who-link">See white label</span>
       </a>
       <a class="who-card" href="#developers">
+        <div class="vig" aria-hidden="true"><div class="vig-code"><b>POST</b> /v1/calls <em>201</em></div></div>
         <span class="tag">For developers</span>
         <h3>An API for voice agents, hosted in the EU.</h3>
         <p>Create agents and calls over REST, get events by webhook, bring your own SIP trunk, import agents from Retell or Vapi.</p>
@@ -129,20 +137,20 @@
 <!-- 3 TENSION -->
 <section class="tension">
   <div class="wrap">
-    <h2 class="h2-light">Your callers don’t speak American English.</h2>
+    <h2 class="h2-light">Your callers don’t speak <span class="dim">American English.</span></h2>
     <div class="tension-grid">
       <article>
-        <span class="tag">01 · Voice</span>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2"/></svg>
         <h3>A Dutch receptionist shouldn’t sound like a tourist.</h3>
         <p>Many platforms are built for American English first. Callers hear the accent in the first second and ask for a human.</p>
       </article>
       <article>
-        <span class="tag">02 · Data</span>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
         <h3>Someone will ask where the call went.</h3>
         <p>A privacy officer, a client or a patient. Speech, transcript and recording often pass through US services. With Allovo every layer runs in an EU region, and you can show which one.</p>
       </article>
       <article>
-        <span class="tag">03 · Cost</span>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>
         <h3>Five vendors, five invoices, a cost that moves.</h3>
         <p>Phone line, speech, model, voice and platform usually bill separately. We put them in one price per minute, so you know what a call costs before it happens.</p>
       </article>
@@ -155,7 +163,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Languages</p>
-      <h2>Same receptionist. Ten languages. Press play.</h2>
+      <h2>Same receptionist. <span class="dim">Ten languages.</span></h2>
       <p>Every language has its own voice, built for it. Not an English voice reading a translation.</p>
     </div>
     <div class="bench-grid" id="benchGrid"></div>
@@ -164,29 +172,30 @@
 
 <!-- HOW IT WORKS -->
 <section class="steps" id="how">
-  <div class="wrap">
-    <div class="section-head">
+  <div class="wrap how-grid">
+    <div class="how-copy">
       <p class="eyebrow">How it works</p>
-      <h2>Build it, connect it, let it answer.</h2>
+      <h2><span class="nb">Build it.</span> <span class="nb">Connect it.</span> <span class="dim nb">It answers.</span></h2>
+      <dl class="how-list">
+        <div><dt>Build</dt><dd>Pick a template for reception, bookings or lead qualification and describe your business in plain words. Test it in the browser first.</dd></div>
+        <div><dt>Connect</dt><dd>Get a local number or forward the line you have. Connect your calendar so it can book, move and cancel.</dd></div>
+        <div><dt>Answer</dt><dd>It picks up in the caller’s language, handles what it can, passes the rest to a person and sends you a summary.</dd></div>
+      </dl>
+      <a class="btn btn-signal btn-lg steps-cta" href="#start" data-signup>Build your agent</a>
     </div>
-    <ol class="steps-grid">
-      <li>
-        <span class="step-no">1</span>
-        <h3>Build</h3>
-        <p>Pick a template for reception, bookings or lead qualification and describe your business in plain words. Test it in the browser before it takes a real call.</p>
-      </li>
-      <li>
-        <span class="step-no">2</span>
-        <h3>Connect</h3>
-        <p>Get a local number, or forward the line you already have. Connect your calendar so it can book, move and cancel appointments.</p>
-      </li>
-      <li>
-        <span class="step-no">3</span>
-        <h3>Answer</h3>
-        <p>It picks up every call in the caller’s language, handles what it can and passes the rest to a person, with a summary of every call in your inbox.</p>
-      </li>
-    </ol>
-    <a class="btn btn-signal btn-lg steps-cta" href="#start" data-signup>Build your agent</a>
+    <div class="callcard" aria-label="Example call, Dutch dental practice">
+      <div class="cc-head"><span class="cc-dot"></span><span>Incoming call · +31 20 555 0134</span><span class="cc-time" id="ccTime">00:00</span></div>
+      <ol class="cc-feed">
+        <li class="cc-a"><span>Mila</span>Goedemiddag, tandartspraktijk De Vries, u spreekt met Mila.</li>
+        <li class="cc-c"><span>Caller</span>Ik wil graag een afspraak voor een controle.</li>
+        <li class="cc-ev"><i></i>Checked calendar · Thu 10:30 free</li>
+        <li class="cc-a"><span>Mila</span>Donderdag om half elf kan. Zal ik die voor u vastzetten?</li>
+        <li class="cc-c"><span>Caller</span>Ja, graag.</li>
+        <li class="cc-ev cc-ok"><i></i>Booked · confirmation sent by SMS</li>
+        <li class="cc-ev"><i></i>Summary emailed to the practice</li>
+      </ol>
+      <div class="cc-foot"><span>Dutch · EU region</span><span>Example call</span></div>
+    </div>
   </div>
 </section>
 
@@ -195,7 +204,7 @@
   <div class="wrap studio-grid">
     <div class="studio-controls">
       <p class="eyebrow">For agencies</p>
-      <h2>Your name on everything your client sees.</h2>
+      <h2>Your name on everything. <span class="dim">Never ours.</span></h2>
       <p>Dashboard, login page, emails, invoices and the web address. Try it with your agency.</p>
       <label class="field">
         <span>Your agency name</span>
@@ -252,7 +261,7 @@
   <div class="wrap dev-grid">
     <div>
       <p class="eyebrow">For developers</p>
-      <h2>Everything in the dashboard is in the API.</h2>
+      <h2>Everything in the dashboard. <span class="dim">Also in the API.</span></h2>
       <p class="dev-lede">Create agents, start outbound calls and read transcripts over REST. Webhooks for every call event, your own SIP trunk if you have one, and an importer for Retell and Vapi agents.</p>
       <ul class="ticks">
         <li>REST API and webhooks</li>
@@ -262,17 +271,17 @@
       <a class="btn btn-signal btn-lg dev-cta" href="#start" data-signup>Get an API key</a>
     </div>
     <pre class="code" aria-label="Example API request"><code><span class="c-mute"># Start an outbound call in Dutch</span>
-curl https://api.allovo.eu/v1/calls \
-  -H "Authorization: Bearer $ALLOVO_KEY" \
+<span class="c-k">curl</span> https://api.allovo.eu/v1/calls \
+  -H <span class="c-s">"Authorization: Bearer $ALLOVO_KEY"</span> \
   -d '{
-    "agent_id": "agt_dentist_nl",
-    "to": "+31 20 555 0134",
-    "language": "nl",
-    "region": "eu-west"
+    <span class="c-p">"agent_id"</span>: <span class="c-s">"agt_dentist_nl"</span>,
+    <span class="c-p">"to"</span>: <span class="c-s">"+31 20 555 0134"</span>,
+    <span class="c-p">"language"</span>: <span class="c-s">"nl"</span>,
+    <span class="c-p">"region"</span>: <span class="c-s">"eu-west"</span>
   }'
 
 <span class="c-mute"># 201 Created</span>
-{ "id": "call_8f2c", "status": "ringing" }</code></pre>
+{ <span class="c-p">"id"</span>: <span class="c-s">"call_8f2c"</span>, <span class="c-p">"status"</span>: <span class="c-s">"ringing"</span> }</code></pre>
   </div>
 </section>
 
@@ -281,7 +290,7 @@ curl https://api.allovo.eu/v1/calls \
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">EU data</p>
-      <h2>Every layer of a call, and where it runs.</h2>
+      <h2>Every layer of a call. <span class="dim">And where it runs.</span></h2>
       <p>No badges. The company behind each layer and the region it runs in, so you can answer any privacy question in one email.</p>
     </div>
     <div class="stack-table" role="table" aria-label="Where each layer of a call runs">
@@ -304,7 +313,7 @@ curl https://api.allovo.eu/v1/calls \
   <div class="wrap pricing-grid">
     <div class="price-card">
       <p class="eyebrow">Pricing</p>
-      <h2>One price per minute. Everything included.</h2>
+      <h2>One price per minute. <span class="dim">Everything included.</span></h2>
       <div class="price-big"><span class="cur">€</span>0.15<span class="per">/ minute</span></div>
       <ul class="ticks">
         <li>Speech, language model, voice and platform included</li>
@@ -345,7 +354,7 @@ curl https://api.allovo.eu/v1/calls \
   <div class="wrap faq-grid">
     <div class="section-head">
       <p class="eyebrow">Questions</p>
-      <h2>Straight answers.</h2>
+      <h2>Straight <span class="dim">answers.</span></h2>
     </div>
     <div class="faq-list">
       <details open><summary>Can my business use Allovo directly, without an agency?</summary><p>Yes. Sign up, build your agent from a template, connect a phone number and go live. If you would rather have it set up for you, a partner agency can do it.</p></details>
@@ -387,6 +396,6 @@ curl https://api.allovo.eu/v1/calls \
 </footer>
 
 <audio id="player" preload="none"></audio>
-<script src="app.js?v=8"></script>
+<script src="app.js?v=10"></script>
 </body>
 </html>
