@@ -222,12 +222,38 @@ p{margin:0}
 .footer a{text-decoration:none;font-size:14px}
 .foot-note{margin-left:auto;font:500 12px/1.4 var(--mono)}
 
+
+/* who */
+.who{padding:96px 0 104px}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.who-card{display:flex;flex-direction:column;gap:14px;text-decoration:none;background:#FBF9F4;border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;transition:border-color .15s,transform .15s,box-shadow .15s}
+.who-card:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 16px 30px -20px rgba(20,22,28,.45)}
+.who-card .tag{color:var(--signal-ink)}
+.who-card p{color:var(--ink-2);font-size:16px;flex:1}
+.who-link{font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px}
+.who-link::after{content:"→";transition:transform .15s}
+.who-card:hover .who-link::after{transform:translateX(3px)}
+.text-btn{background:none;border:0;padding:0;font:inherit;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:underline;text-underline-offset:3px}
+.text-btn .play-ico{border-left-width:7px;border-top-width:5px;border-bottom-width:5px}
+/* developers */
+.dev{background:var(--board);color:var(--paper);padding:104px 0}
+.dev-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.dev h2{color:#fff;max-width:14ch}
+.dev .eyebrow{color:var(--signal)}
+.dev-lede{margin-top:18px;color:#B8B5AD;font-size:18px;max-width:46ch}
+.dev .ticks li{color:#DAD6CD}
+.dev .ticks li::before{border-color:#58C796}
+.code{margin:0;background:#111216;border:1px solid #2F323A;border-radius:16px;padding:24px 26px;overflow-x:auto;font:500 14px/1.65 var(--mono);color:#E6E2D8;min-width:0}
+.c-mute{color:#7D808A}
+.price-example{margin-top:22px;font:500 14px/1.5 var(--mono);color:#B8B5AD}
+
 /* responsive */
 @media (max-width:1080px){
   .nav{display:none}
   .hero-grid,.studio-grid,.pricing-grid,.faq-grid{grid-template-columns:1fr}
   .hero h1{max-width:16ch}
   .bench-grid{grid-template-columns:repeat(3,1fr)}
+  .who-grid,.dev-grid{grid-template-columns:1fr}
 }
 @media (max-width:720px){
   body{font-size:16px}
@@ -249,6 +275,8 @@ p{margin:0}
   .board-list button b{font-size:12px}
   .tension,.bench,.steps,.stack,.faq,.studio,.pricing{padding:72px 0}
   .tension-grid{grid-template-columns:1fr;margin-top:36px}
+  .who,.dev{padding:72px 0}
+  .code{font-size:12px;padding:18px}
   .tension-grid article{border-right:0;margin-right:0;border-bottom:1px solid #34373F;padding:26px 0}
   .bench-grid{grid-template-columns:1fr 1fr;gap:10px}
   .lang-tile{min-height:0;padding:14px}
