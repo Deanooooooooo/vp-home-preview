@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=25">
+<link rel="stylesheet" href="styles.css?v=27">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","name":"Allovo","description":"European voice AI platform: AI phone agents for businesses, white label for agencies, API for developers."},
@@ -37,22 +37,27 @@
 <div class="preview-bar">Preview draft · working name “Allovo” · sample voices, prices, stack and links are placeholders</div>
 
 <header class="site-header">
-  <div class="wrap header-in">
+  <div class="header-in">
     <a class="logo" href="#top" aria-label="Allovo home">
       <span class="logo-tile" aria-hidden="true"><span>a</span></span>
       <span class="logo-word">allovo</span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" id="mainNav" aria-label="Main">
       <a href="#who">For businesses</a>
       <a href="#white-label">For agencies</a>
       <a href="#developers">Developers</a>
       <a href="#languages">Languages</a>
       <a href="#pricing">Pricing</a>
+      <div class="nav-mobile-cta">
+        <a class="btn btn-solid btn-lg" href="#start">Build your agent</a>
+        <a class="link-quiet" href="#start" data-signup>Log in</a>
+      </div>
     </nav>
     <div class="header-cta">
       <a class="link-quiet" href="#start" data-signup>Log in</a>
-      <a class="btn btn-ink" href="#start">Build your agent</a>
+      <a class="btn btn-solid" href="#start">Build your agent</a>
     </div>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
   </div>
 </header>
 
@@ -422,7 +427,7 @@
   <button class="mp-btn" id="mpToggle" type="button" aria-label="Pause"><span class="play-ico" aria-hidden="true"></span></button>
   <button class="mp-close" id="mpClose" type="button" aria-label="Stop and close">×</button>
 </div>
-<script src="app.js?v=20"></script>
+<script src="app.js?v=21"></script>
 <script src="voice.js?v=8"></script>
 </body>
 </html>

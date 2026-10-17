@@ -218,7 +218,14 @@
   }
 
   // nav scroll-spy
-  const links = [...document.querySelectorAll(".nav a")];
+  const links = [...document.querySelectorAll(".nav > a")];
+  // mobile menu
+  const hdr = $(".site-header"), burger = $(".burger");
+  const setMenu = open => { hdr.classList.toggle("menu-open", open); burger.setAttribute("aria-expanded", open); burger.setAttribute("aria-label", open ? "Close menu" : "Menu"); };
+  burger.addEventListener("click", () => setMenu(!hdr.classList.contains("menu-open")));
+  document.querySelectorAll(".nav a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+  addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+  document.addEventListener("click", e => { if (!hdr.contains(e.target)) setMenu(false); });
   const spy = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
     links.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id));
