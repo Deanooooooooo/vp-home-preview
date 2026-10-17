@@ -196,11 +196,59 @@
     cities.forEach(c => c.classList.toggle("loud", c.dataset.lang === code && !player.paused));
   }
 
+
+  // floating mini player: shows while audio plays and its source is off screen
+  const mp = document.getElementById("miniPlayer"), mpWave = document.getElementById("mpWave"), mpToggle = document.getElementById("mpToggle");
+  const CITY = { nl: ["Amsterdam", "Dutch"], de: ["Berlin", "German"], fr: ["Paris", "French"], bg: ["Sofia", "Bulgarian"], es: ["Madrid", "Spanish"], it: ["Milano", "Italian"], pl: ["Warszawa", "Polish"], ro: ["București", "Romanian"], sv: ["Stockholm", "Swedish"], en: ["London", "English"] };
+  let mpDismissed = false;
+  mp.hidden = false;
+  player.addEventListener("play", () => { mpDismissed = false; });
+  mpToggle.addEventListener("click", () => { player.paused ? player.play() : player.pause(); });
+  document.getElementById("mpClose").addEventListener("click", () => { player.pause(); mpDismissed = true; mp.classList.remove("show"); });
+  function sourceVisible() {
+    const code = (player.src.match(/greet-(\w+)\.mp3/) || [])[1];
+    const els = [document.getElementById("board"), document.querySelector(`.lang-tile[data-lang="${code}"]`), code === "en" ? document.getElementById("orb") : null].filter(Boolean);
+    return els.some(onScreen);
+  }
+  function drawMini(t) {
+    if (!mp) return;
+    const code = (player.src.match(/greet-(\w+)\.mp3/) || [])[1];
+    const active = code && !mpDismissed && (!player.paused || mp.classList.contains("show") && player.currentTime > 0 && !player.ended);
+    const show = active && !sourceVisible();
+    mp.classList.toggle("show", !!show);
+    if (!show) return;
+    document.getElementById("mpCode").textContent = code.toUpperCase();
+    document.getElementById("mpCity").textContent = CITY[code][0];
+    document.getElementById("mpLang").textContent = CITY[code][1];
+    mpToggle.classList.toggle("is-playing", !player.paused);
+    mpToggle.setAttribute("aria-label", player.paused ? "Play" : "Pause");
+    const [g, w, h, d] = fit(mpWave); g.clearRect(0, 0, w, h);
+    const n = 22, gap = 2 * d, bw = (w - gap * (n - 1)) / n, prog = player.duration ? player.currentTime / player.duration : 0;
+    for (let i = 0; i < n; i++) {
+      const v = live ? Math.min(1, Math.pow(freq[i * 2 + 2] / 255, .55) * 1.1) : .25;
+      const bh = Math.max(2 * d, v * h);
+      g.fillStyle = i / n <= prog ? C.a2 : C.line;
+      g.fillRect(i * (bw + gap), (h - bh) / 2, bw, bh);
+    }
+  }
+
+  // breathing wordmark: letters rise and fall like a voice level as you reach the end
+  const bm = document.getElementById("bigmark"), bmL = bm ? [...bm.children] : [];
+  function drawMark(t) {
+    if (!bm || !onScreen(bm)) return;
+    const r = bm.getBoundingClientRect(), vis = Math.min(1, Math.max(0, (innerHeight - r.top) / r.height));
+    bmL.forEach((s, i) => {
+      const wave = .5 + .5 * Math.sin(t * .0016 + i * .9);
+      const voice = live ? Math.pow(freq[i * 5 + 3] / 255, .6) : 0;
+      s.style.transform = `scaleY(${(0.82 + vis * .18) * (1 + wave * .05 + voice * .18)})`;
+    });
+  }
+
   function frame(t) {
     sample(); smooth += (level - smooth) * .12;
-    drawRibbon(t); drawScope(t); drawMeters(); drawOrb(t); drawMap();
+    drawRibbon(t); drawScope(t); drawMeters(); drawOrb(t); drawMap(); drawMini(t); drawMark(t);
     requestAnimationFrame(frame);
   }
-  if (reduce) { drawRibbon(0); drawScope(0); drawOrb(0); drawMap(); setInterval(drawMap, 500); player.addEventListener("timeupdate", () => { sample(); drawScope(0); drawMeters(); drawOrb(0); }); }
+  if (reduce) { drawRibbon(0); drawScope(0); drawOrb(0); drawMap(); setInterval(() => { drawMap(); sample(); drawMini(0); }, 400); player.addEventListener("timeupdate", () => { sample(); drawScope(0); drawMeters(); drawOrb(0); }); }
   else requestAnimationFrame(frame);
 })();

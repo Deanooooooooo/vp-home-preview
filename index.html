@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=23">
+<link rel="stylesheet" href="styles.css?v=25">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","name":"Allovo","description":"European voice AI platform: AI phone agents for businesses, white label for agencies, API for developers."},
@@ -353,6 +353,7 @@
         <span>Your price per minute <output id="oPrice">€0.30</output></span>
         <input type="range" id="rPrice" min="0.15" max="0.60" step="0.01" value="0.30">
       </label>
+      <div class="calls-viz" aria-hidden="true"><div class="calls-grid" id="callsGrid"></div><p class="calls-cap"><span id="callsTotal">8,000</span> minutes of calls a month · each dot is 100 minutes</p></div>
       <div class="calc-out">
         <div><span>You bill</span><b id="cRevenue">€2,400</b></div>
         <div><span>We bill you</span><b id="cCost">€1,200</b></div>
@@ -402,6 +403,7 @@
 
 </main>
 
+<div class="bigmark" id="bigmark" aria-hidden="true"><span>a</span><span>l</span><span>l</span><span>o</span><span>v</span><span>o</span></div>
 <footer class="footer">
   <div class="wrap footer-in">
     <div class="logo logo-foot"><span class="logo-tile" aria-hidden="true"><span>a</span></span><span class="logo-word">allovo</span></div>
@@ -413,7 +415,14 @@
 </footer>
 
 <audio id="player" preload="none"></audio>
-<script src="app.js?v=19"></script>
-<script src="voice.js?v=7"></script>
+<div class="miniplayer" id="miniPlayer" role="region" aria-label="Now playing" hidden>
+  <span class="mp-code" id="mpCode">NL</span>
+  <span class="mp-text"><b id="mpCity">Amsterdam</b><em id="mpLang">Dutch</em></span>
+  <canvas class="mp-wave" id="mpWave" aria-hidden="true"></canvas>
+  <button class="mp-btn" id="mpToggle" type="button" aria-label="Pause"><span class="play-ico" aria-hidden="true"></span></button>
+  <button class="mp-close" id="mpClose" type="button" aria-label="Stop and close">×</button>
+</div>
+<script src="app.js?v=20"></script>
+<script src="voice.js?v=8"></script>
 </body>
 </html>

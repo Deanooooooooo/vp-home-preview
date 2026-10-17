@@ -175,7 +175,17 @@
     const c = +rC.value, m = +rM.value, p = +rP.value;
     $("#oClients").textContent = c; $("#oMinutes").textContent = m.toLocaleString("en-GB"); $("#oPrice").textContent = "€" + p.toFixed(2);
     const rev = c * m * p, cost = c * m * OUR;
+    paintCalls(c * m);
     $("#cRevenue").textContent = fmt(rev); $("#cCost").textContent = fmt(cost); $("#cMargin").textContent = fmt(rev - cost);
+  }
+  // calls visual: one dot per 100 minutes, up to 200
+  const cg = $("#callsGrid"), ct = $("#callsTotal");
+  for (let i = 0; i < 200; i++) cg.appendChild(document.createElement("i"));
+  const dotsEls = [...cg.children];
+  function paintCalls(total) {
+    const n = Math.min(200, Math.round(total / 100));
+    dotsEls.forEach((d, i) => { d.classList.toggle("on", i < n); d.classList.toggle("edge", i === n - 1); });
+    ct.textContent = total.toLocaleString("en-GB") + (total / 100 > 200 ? "+" : "");
   }
   [rC, rM, rP].forEach(r => r.addEventListener("input", calc)); calc();
 
