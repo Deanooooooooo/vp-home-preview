@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=19">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","name":"Allovo","description":"European voice AI platform: AI phone agents for businesses, white label for agencies, API for developers."},
@@ -297,6 +297,7 @@
       <p>No badges. The company behind each layer and the region it runs in, so you can answer any privacy question in one email.</p>
     </div>
     <div class="stack-table" role="table" aria-label="Where each layer of a call runs">
+      <div class="trace" aria-hidden="true"><i class="trace-line"></i><i class="trace-fill" id="traceFill"></i><i class="trace-dot" id="traceDot"></i></div>
       <div class="stack-row stack-headrow" role="row"><span role="columnheader">Layer</span><span role="columnheader">Provider</span><span role="columnheader">Region</span></div>
       <div class="stack-row" role="row"><span role="cell"><b>Phone line</b><em>Calls in and out</em></span><span role="cell">EU carriers over SIP</span><span role="cell"><i class="eu-dot"></i>EU</span></div>
       <div class="stack-row" role="row"><span role="cell"><b>Speech to text</b><em>Hearing the caller</em></span><span role="cell">Soniox</span><span role="cell"><i class="eu-dot"></i>EU region</span></div>
@@ -304,6 +305,7 @@
       <div class="stack-row" role="row"><span role="cell"><b>Voice</b><em>Speaking back</em></span><span role="cell">Soniox</span><span role="cell"><i class="eu-dot"></i>EU region</span></div>
       <div class="stack-row" role="row"><span role="cell"><b>App, data, recordings</b><em>Everything we store</em></span><span role="cell">Hetzner</span><span role="cell"><i class="eu-dot"></i>Germany · Finland</span></div>
     </div>
+    <p class="trace-status" id="traceStatus" aria-live="off"><span class="ts-dot"></span><span id="traceText">Follow one call through the stack</span></p>
     <div class="stack-links">
       <a href="#faq">Sub-processor list (at launch)</a>
       <a href="#faq">Data processing agreement (at launch)</a>
@@ -403,6 +405,6 @@
 
 <audio id="player" preload="none"></audio>
 <script src="app.js?v=17"></script>
-<script src="voice.js?v=5"></script>
+<script src="voice.js?v=6"></script>
 </body>
 </html>

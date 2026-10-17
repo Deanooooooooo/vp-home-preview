@@ -138,6 +138,44 @@
     g.globalAlpha = 1;
   }
 
+
+  // call trace: one call travels down the EU stack, row by row
+  const table = document.querySelector(".stack-table");
+  if (table) {
+    const rows = [...table.querySelectorAll(".stack-row:not(.stack-headrow)")];
+    const dot = document.getElementById("traceDot"), fill = document.getElementById("traceFill");
+    const txt = document.getElementById("traceText"), status = document.getElementById("traceStatus");
+    const steps = ["Call comes in on an EU line", "Speech turned into text in the EU", "Answer written by the model in the EU", "Voice generated in the EU", "Call stored in Germany or Finland"];
+    let running = false, timer = null;
+    const centre = r => r.offsetTop + r.offsetHeight / 2;
+    function reset() { rows.forEach(r => r.classList.remove("lit", "done")); dot.style.opacity = 0; fill.style.height = "0px"; status.classList.remove("ok"); }
+    function run() {
+      if (running) return; running = true; reset();
+      let i = 0;
+      const step = () => {
+        if (!running) return;
+        if (i > 0) { rows[i - 1].classList.remove("lit"); rows[i - 1].classList.add("done"); }
+        if (i === rows.length) {
+          dot.style.opacity = 0; status.classList.add("ok");
+          txt.textContent = "Every layer stayed in the EU";
+          timer = setTimeout(() => { running = false; txt.textContent = "Follow one call through the stack"; if (inView) run(); }, 2600);
+          return;
+        }
+        const y = centre(rows[i]);
+        dot.style.opacity = 1; dot.style.top = y + "px"; fill.style.height = y + "px";
+        rows[i].classList.add("lit"); txt.textContent = steps[i] || "";
+        i++; timer = setTimeout(step, 1150);
+      };
+      dot.style.top = centre(rows[0]) + "px"; timer = setTimeout(step, 200);
+    }
+    let inView = false;
+    if (reduce) { status.style.display = "none"; }
+    else new IntersectionObserver(es => es.forEach(e => {
+      inView = e.isIntersecting;
+      if (inView) run(); else { running = false; clearTimeout(timer); reset(); txt.textContent = "Follow one call through the stack"; }
+    }), { threshold: .45 }).observe(table);
+  }
+
   function frame(t) {
     sample(); smooth += (level - smooth) * .12;
     drawRibbon(t); drawScope(t); drawMeters(); drawOrb(t);

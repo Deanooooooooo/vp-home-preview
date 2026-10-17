@@ -373,6 +373,24 @@ p{margin:0}
 .speaking .board-line .cw.on{color:var(--ink)}
 .speaking .board-line .cw.now{background:var(--a2-tint)}
 
+
+/* call trace through the EU stack */
+.stack-table{position:relative}
+.stack-row{padding-left:56px!important}
+.trace{position:absolute;left:0;top:0;bottom:0;width:56px;pointer-events:none;z-index:2}
+.trace-line{position:absolute;left:27px;top:0;bottom:0;width:1px;background:var(--line)}
+.trace-fill{position:absolute;left:27px;top:0;width:1px;height:0;background:var(--a2);transition:height .45s var(--ease)}
+.trace-dot{position:absolute;left:22px;top:0;width:11px;height:11px;border-radius:50%;background:var(--a2);outline:3px solid #fff;opacity:0;transform:translateY(-50%);transition:top .45s var(--ease),opacity .3s}
+.trace-dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--a2);animation:ripple 1.4s ease-out infinite}
+@keyframes ripple{from{transform:scale(.6);opacity:1}to{transform:scale(1.9);opacity:0}}
+.stack-row{transition:background-color .35s var(--ease)}
+.stack-row.lit{background:var(--a2-tint)}
+.stack-row.done span:nth-child(3){color:var(--a2-ink)}
+.stack-row.done span:nth-child(3)::after{content:"✓";margin-left:4px;font-weight:600}
+.trace-status{display:flex;align-items:center;gap:10px;margin:18px 0 0;font:500 13px/1.3 var(--mono);color:var(--muted);min-height:18px}
+.ts-dot{width:7px;height:7px;border-radius:50%;background:var(--a2)}
+.trace-status.ok{color:var(--a2-ink)}
+
 /* scroll-driven reveals: motion tied to reading, no hover gimmicks */
 @supports (animation-timeline: view()){
   .section-head,.studio-controls,.app-window,.code,.calc,.price-card,.stack-table,.faq-list,.closer-in,.who-card,.lang-tile,.steps-grid li,.tension-grid article{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
@@ -424,7 +442,8 @@ p{margin:0}
   .app-kpis b{font-size:17px}
   .app-table th:nth-child(2),.app-table td:nth-child(2){display:none}
   .stack-headrow{display:none!important}
-  .stack-row{grid-template-columns:1fr;gap:6px;padding:16px 18px}
+  .stack-row{grid-template-columns:1fr;gap:6px;padding:16px 18px 16px 48px!important}
+  .trace{width:44px}.trace-line,.trace-fill{left:21px}.trace-dot{left:16px}
   .code{font-size:12px;padding:18px}
   .calc{padding:22px}
   .calc-margin b{font-size:34px!important}
