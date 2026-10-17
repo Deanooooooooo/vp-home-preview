@@ -62,8 +62,6 @@
     $("#boardLine").textContent = "“" + l.text + "”";
     $("#boardMeta").textContent = l.native;
     list.querySelectorAll("button").forEach((b, k) => b.setAttribute("aria-current", k === i ? "true" : "false"));
-    const hero = document.querySelector("[data-play-current]");
-    if (hero) hero.lastChild.textContent = " Hear it in " + l.name;
   }
 
   function startCycle() { if (reduce) return; stopCycle(); cycle = setInterval(() => { if (!player.paused) return; show((current + 1) % BOARD.length); }, 4200); }
@@ -101,6 +99,9 @@
   });
 
   show(0); startCycle();
+  const boardEl = $("#board");
+  ["mouseenter", "focusin"].forEach(ev => boardEl.addEventListener(ev, stopCycle));
+  ["mouseleave", "focusout"].forEach(ev => boardEl.addEventListener(ev, () => { if (player.paused) startCycle(); }));
 
   // language bench
   const grid = $("#benchGrid");
@@ -118,10 +119,11 @@
 
   // white-label studio
   const COLORS = ["#FF5A1F", "#2E5BFF", "#0F8A6A", "#7A3FE4", "#D61F69", "#14161C"];
+  const CNAMES = ["Orange", "Blue", "Green", "Purple", "Pink", "Black"];
   const sw = $("#swatches"), app = $("#appWindow");
   COLORS.forEach((c, i) => {
     const b = document.createElement("button"); b.type = "button"; b.className = "swatch"; b.style.background = c;
-    b.setAttribute("aria-label", "Brand colour " + c); b.setAttribute("aria-pressed", i === 1 ? "true" : "false");
+    b.setAttribute("aria-label", CNAMES[i]); b.setAttribute("aria-pressed", i === 1 ? "true" : "false");
     b.addEventListener("click", () => { sw.querySelectorAll(".swatch").forEach(x => x.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true"); app.style.setProperty("--accent", c); });
     sw.appendChild(b);
   });

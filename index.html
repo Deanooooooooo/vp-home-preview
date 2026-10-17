@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>White Label Voice AI Platform for Agencies | Allovo</title>
-<meta name="description" content="White-label voice AI for agencies across Europe. Phone agents that sound local in every European language, data processed in the EU, one price per minute.">
+<meta name="description" content="White-label voice AI for agencies across Europe. Phone agents with local voices in ten languages, data processed in the EU, one price per minute.">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="White-label voice AI for agencies, in every European language">
+<meta property="og:title" content="White-label voice AI for agencies, with local voices across Europe">
 <meta property="og:description" content="Build phone agents, put your brand on them and bill your clients. Local voices, EU data, one price per minute.">
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=1">
+<link rel="stylesheet" href="styles.css?v=2">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","name":"Allovo","description":"White-label voice AI platform for agencies in Europe."},
@@ -30,7 +30,7 @@
 </script>
 </head>
 <body>
-<div class="preview-bar">Preview draft · working name “Allovo” · prices and free minutes not final</div>
+<div class="preview-bar">Preview draft · working name “Allovo” · sample voices, prices, stack and links are placeholders</div>
 
 <header class="site-header">
   <div class="wrap header-in">
@@ -43,10 +43,10 @@
       <a href="#white-label">White label</a>
       <a href="#data">EU data</a>
       <a href="#pricing">Pricing</a>
-      <a href="#faq">Docs</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <div class="header-cta">
-      <a class="link-quiet" href="#">Log in</a>
+      <a class="link-quiet" href="#start">Log in</a>
       <a class="btn btn-ink" href="#start">Start free</a>
     </div>
   </div>
@@ -59,12 +59,12 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Voice AI engine for agencies · built in the EU</p>
-      <h1>White-label voice AI for agencies, in every European language.</h1>
+      <h1>White-label voice AI for agencies, with local voices across Europe.</h1>
       <p class="lede">Build phone agents, put your brand on them and bill your clients. Voices that sound local, data that stays in the EU, one price per minute.</p>
       <div class="hero-actions">
         <a class="btn btn-signal btn-lg" href="#start">Start free</a>
         <button class="btn btn-ghost btn-lg" type="button" data-play-current>
-          <span class="play-ico" aria-hidden="true"></span> Hear it in Dutch
+          <span class="play-ico" aria-hidden="true"></span> Hear a sample
         </button>
       </div>
       <p class="micro">60 free minutes · no card · your brand from day one</p>
@@ -80,7 +80,7 @@
           <div class="flaps flaps-city" id="flapCity" aria-hidden="true"></div>
           <div class="flaps flaps-lang" id="flapLang" aria-hidden="true"></div>
         </div>
-        <p class="board-line" id="boardLine" aria-live="polite"></p>
+        <p class="board-line" id="boardLine"></p>
         <div class="board-player">
           <button class="play-btn" type="button" id="boardPlay" aria-label="Play this greeting">
             <span class="play-ico" aria-hidden="true"></span>
@@ -153,7 +153,7 @@
       </ul>
     </div>
 
-    <div class="app-window" id="appWindow" aria-label="Preview of a white-label client dashboard">
+    <div class="app-window" id="appWindow" role="region" aria-label="Preview of a white-label client dashboard">
       <div class="app-bar">
         <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="url" id="appUrl">app.northwinddigital.eu</span>
@@ -231,9 +231,8 @@
       <div class="stack-row" role="row"><span role="cell"><b>App, data, recordings</b><em>Everything we store</em></span><span role="cell">Hetzner</span><span role="cell"><i class="eu-dot"></i>Germany · Finland</span></div>
     </div>
     <div class="stack-links">
-      <a href="#">Sub-processor list</a>
-      <a href="#">Data processing agreement</a>
-      <a href="#">Security overview</a>
+      <a href="#faq">Sub-processor list (at launch)</a>
+      <a href="#faq">Data processing agreement (at launch)</a>
     </div>
   </div>
 </section>
@@ -302,8 +301,8 @@
     <h2>Your brand. Their language. Our engine.</h2>
     <p>Build your first agent today. 60 free minutes, no card.</p>
     <div class="hero-actions">
-      <a class="btn btn-signal btn-lg" href="#">Start free</a>
-      <a class="btn btn-ghost-dark btn-lg" href="#">Talk to us</a>
+      <a class="btn btn-signal btn-lg" href="#top">Start free</a>
+      <a class="btn btn-ghost-dark btn-lg" href="#faq">Talk to us</a>
     </div>
   </div>
 </section>
@@ -321,6 +320,6 @@
 </footer>
 
 <audio id="player" preload="none"></audio>
-<script src="app.js?v=1"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>
