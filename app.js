@@ -1,4 +1,11 @@
 (() => {
+  // hero headline: word-by-word reveal
+  const h1 = document.querySelector(".hero h1");
+  if (h1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const words = h1.textContent.trim().split(/\s+/);
+    h1.setAttribute("aria-label", h1.textContent.trim());
+    h1.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(" ");
+  }
   const LANGS = [
     { c: "nl", name: "Dutch", native: "Nederlands", city: "Amsterdam", text: "Goedemiddag, tandartspraktijk De Vries, u spreekt met Mila. Waarmee kan ik u helpen?" },
     { c: "de", name: "German", native: "Deutsch", city: "Berlin", text: "Guten Tag, Zahnarztpraxis Dr. Becker, Sie sprechen mit Mila. Wie kann ich Ihnen helfen?" },
@@ -118,16 +125,16 @@
   });
 
   // white-label studio
-  const COLORS = ["#FF5A1F", "#2E5BFF", "#0F8A6A", "#7A3FE4", "#D61F69", "#14161C"];
-  const CNAMES = ["Orange", "Blue", "Green", "Purple", "Pink", "Black"];
+  const COLORS = ["#2E46F0", "#FF5A1F", "#0F8A6A", "#7A3FE4", "#D61F69", "#14161C"];
+  const CNAMES = ["Blue", "Orange", "Green", "Purple", "Pink", "Black"];
   const sw = $("#swatches"), app = $("#appWindow");
   COLORS.forEach((c, i) => {
     const b = document.createElement("button"); b.type = "button"; b.className = "swatch"; b.style.background = c;
-    b.setAttribute("aria-label", CNAMES[i]); b.setAttribute("aria-pressed", i === 1 ? "true" : "false");
+    b.setAttribute("aria-label", CNAMES[i]); b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
     b.addEventListener("click", () => { sw.querySelectorAll(".swatch").forEach(x => x.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true"); app.style.setProperty("--accent", c); });
     sw.appendChild(b);
   });
-  app.style.setProperty("--accent", COLORS[1]);
+  app.style.setProperty("--accent", COLORS[0]);
   const nameIn = $("#agencyName");
   const slug = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "") || "youragency";
   function brand() {
