@@ -71,7 +71,10 @@
     current = i; const l = BOARD[i];
     flipTo(cityCells, plain(l.city));
     flipTo(langCells, l.c.toUpperCase());
-    $("#boardLine").textContent = "“" + l.text + "”";
+    const bl = $("#boardLine");
+    bl.setAttribute("aria-label", l.text);
+    bl.innerHTML = l.text.split(" ").map((w, i) => `<span class="cw" aria-hidden="true" style="--i:${i}">${i === 0 ? "“" : ""}${w}${i === l.text.split(" ").length - 1 ? "”" : ""}</span>`).join(" ");
+    bl.classList.remove("typing"); void bl.offsetWidth; bl.classList.add("typing");
     $("#boardMeta").textContent = l.native;
     list.querySelectorAll("button").forEach((b, k) => b.setAttribute("aria-current", k === i ? "true" : "false"));
   }
@@ -95,6 +98,19 @@
     setPlayingUI(code, true);
     document.querySelectorAll(".lang-tile").forEach(t => t.setAttribute("aria-pressed", t.dataset.lang === code ? "true" : "false"));
   }
+  // live captions: words light up in step with the voice
+  const board = $("#board");
+  function captions() {
+    const bl = $("#boardLine"), on = !player.paused && BOARD[current] && BOARD[current].c === playingCode;
+    board.classList.toggle("speaking", on);
+    if (!on) return;
+    requestAnimationFrame(captions);
+    if (!player.duration) return;
+    const ws = bl.querySelectorAll(".cw"), p = Math.min(1, (player.currentTime / player.duration) * 1.12), upto = Math.floor(p * ws.length);
+    ws.forEach((w, i) => { w.classList.toggle("on", i < upto); w.classList.toggle("now", i === upto - 1); });
+  }
+  player.addEventListener("play", () => requestAnimationFrame(captions));
+  player.addEventListener("ended", () => { board.classList.remove("speaking"); document.querySelectorAll("#boardLine .cw").forEach(w => { w.classList.add("on"); w.classList.remove("now"); }); });
   player.addEventListener("timeupdate", () => {
     if (!player.duration) return;
     const p = player.currentTime / player.duration;
