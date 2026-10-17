@@ -108,8 +108,8 @@ p{margin:0}
 .who-card .tag{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--a1)}
 .who-card p{color:var(--ink-2);font-size:16px;flex:1}
 .who-link{font-weight:500;font-size:15px;display:inline-flex;align-items:center;gap:8px;color:var(--a1)}
-.who-link::after{content:"→";transition:transform .25s var(--ease)}
-.who-card:hover .who-link::after{transform:translateX(4px)}
+.who-link::after{content:"→"}
+
 
 /* tension */
 .tension{background:var(--surface)}
