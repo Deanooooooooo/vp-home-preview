@@ -247,6 +247,9 @@ p{margin:0}
 .c-mute{color:#7D808A}
 .price-example{margin-top:22px;font:500 14px/1.5 var(--mono);color:#B8B5AD}
 
+.dev-cta,.steps-cta{margin-top:32px}
+.signup-note{margin-top:20px;font:500 14px/1.4 var(--mono);color:#FFB596}
+
 /* responsive */
 @media (max-width:1080px){
   .nav{display:none}

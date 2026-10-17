@@ -149,6 +149,9 @@
   }
   [rC, rM, rP].forEach(r => r.addEventListener("input", calc)); calc();
 
+  // signup placeholder (preview)
+  document.querySelectorAll("[data-signup]").forEach(a => a.addEventListener("click", () => { const n = $("#signupNote"); if (n) { n.hidden = false; } }));
+
   // closer flaps
   const cf = $("#closerFlaps"); const word = "HALLO ALLÔ АЛО";
   word.split("").forEach(ch => { const s = document.createElement("span"); s.className = "cell"; s.textContent = ch === " " ? "" : ch; if (ch === " ") s.style.opacity = ".25"; cf.appendChild(s); });

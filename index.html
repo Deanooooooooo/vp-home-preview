@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>European Voice AI Platform for Businesses and Agencies | Allovo</title>
+<title>European Voice AI Platform for Businesses, Agencies and Developers | Allovo</title>
 <meta name="description" content="AI phone agents that sound local in ten European languages. AI receptionists for businesses, white label for agencies. EU data, one price per minute.">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="The European voice AI platform. Phone agents that sound local.">
@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","name":"Allovo","description":"European voice AI platform: AI phone agents for businesses, white label for agencies, API for developers."},
@@ -24,7 +24,9 @@
 {"@type":"Question","name":"Which languages can my agents speak?","acceptedAnswer":{"@type":"Answer","text":"The ten languages you can hear on this page: English, Dutch, German, French, Spanish, Italian, Polish, Bulgarian, Romanian and Swedish. Each one uses a voice built for that language, not an English voice reading a translation."}},
 {"@type":"Question","name":"Where is call data processed and stored?","acceptedAnswer":{"@type":"Answer","text":"Inside the European Union. Speech recognition, the language model, the voice and storage all run in EU regions, and the sub-processor list names every company and region."}},
 {"@type":"Question","name":"How much does Allovo cost?","acceptedAnswer":{"@type":"Answer","text":"One price per minute with speech, language model, voice and platform included. Phone numbers are charged at cost. There is no monthly platform fee."}},
-{"@type":"Question","name":"Can I move agents from Retell or Vapi?","acceptedAnswer":{"@type":"Answer","text":"Yes. Import an agent's prompt, tools and settings, test it side by side, then point the phone number to Allovo when you are happy."}},
+{"@type":"Question","name":"Can I move agents from Retell or Vapi?","acceptedAnswer":{"@type":"Answer","text":"Yes. Import an agent’s prompt, tools and settings, test it side by side, then point the phone number to Allovo when you are happy."}},
+{"@type":"Question","name":"How fast can a business go live?","acceptedAnswer":{"@type":"Answer","text":"Most businesses go live the same day: pick a template, describe your business, connect your calendar and forward your number."}},
+{"@type":"Question","name":"Is there an API?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything in the dashboard is in the REST API, with webhooks for every call event and SIP trunking for your own carrier."}},
 {"@type":"Question","name":"Will my clients see the Allovo name?","acceptedAnswer":{"@type":"Answer","text":"No. The dashboard, login page, emails and invoices carry your name, logo, colours and domain."}}
 ]}
 ]}
@@ -47,7 +49,7 @@
       <a href="#pricing">Pricing</a>
     </nav>
     <div class="header-cta">
-      <a class="link-quiet" href="#start">Log in</a>
+      <a class="link-quiet" href="#start" data-signup>Log in</a>
       <a class="btn btn-ink" href="#start">Build your agent</a>
     </div>
   </div>
@@ -72,8 +74,8 @@
     <div class="board-wrap">
       <div class="board" id="board" aria-label="Sample greetings in European languages">
         <div class="board-head">
-          <span>Now answering</span>
-          <span class="live"><i></i>EU-West</span>
+          <span>Sample greetings</span>
+          <span class="live"><i></i>EU voices</span>
         </div>
         <div class="board-main">
           <div class="flaps flaps-city" id="flapCity" aria-hidden="true"></div>
@@ -140,7 +142,7 @@
         <p>A privacy officer, a client or a patient. Speech, transcript and recording often pass through US services. With Allovo every layer runs in an EU region, and you can show which one.</p>
       </article>
       <article>
-        <span class="tag">03 · Margin</span>
+        <span class="tag">03 · Cost</span>
         <h3>Five vendors, five invoices, a cost that moves.</h3>
         <p>Phone line, speech, model, voice and platform usually bill separately. We put them in one price per minute, so you know what a call costs before it happens.</p>
       </article>
@@ -184,6 +186,7 @@
         <p>It picks up every call in the caller’s language, handles what it can and passes the rest to a person, with a summary of every call in your inbox.</p>
       </li>
     </ol>
+    <a class="btn btn-signal btn-lg steps-cta" href="#start" data-signup>Build your agent</a>
   </div>
 </section>
 
@@ -256,6 +259,7 @@
         <li>SIP trunking and number porting</li>
         <li>Import agents from Retell or Vapi</li>
       </ul>
+      <a class="btn btn-signal btn-lg dev-cta" href="#start" data-signup>Get an API key</a>
     </div>
     <pre class="code" aria-label="Example API request"><code><span class="c-mute"># Start an outbound call in Dutch</span>
 curl https://api.allovo.eu/v1/calls \
@@ -324,7 +328,7 @@ curl https://api.allovo.eu/v1/calls \
       </label>
       <label class="range">
         <span>Your price per minute <output id="oPrice">€0.30</output></span>
-        <input type="range" id="rPrice" min="0.12" max="0.60" step="0.01" value="0.30">
+        <input type="range" id="rPrice" min="0.15" max="0.60" step="0.01" value="0.30">
       </label>
       <div class="calc-out">
         <div><span>You bill</span><b id="cRevenue">€2,400</b></div>
@@ -350,6 +354,8 @@ curl https://api.allovo.eu/v1/calls \
       <details><summary>Where is call data processed and stored?</summary><p>Inside the European Union. Speech recognition, the language model, the voice and storage all run in EU regions, and the sub-processor list names every company and region.</p></details>
       <details><summary>How much does Allovo cost?</summary><p>One price per minute with speech, language model, voice and platform included. Phone numbers are charged at cost. There is no monthly platform fee.</p></details>
       <details><summary>Can I move agents from Retell or Vapi?</summary><p>Yes. Import an agent’s prompt, tools and settings, test it side by side, then point the phone number to Allovo when you are happy.</p></details>
+      <details><summary>How fast can a business go live?</summary><p>Most businesses go live the same day: pick a template, describe your business, connect your calendar and forward your number.</p></details>
+      <details><summary>Is there an API?</summary><p>Yes. Everything in the dashboard is in the REST API, with webhooks for every call event and SIP trunking for your own carrier.</p></details>
       <details><summary>Will my clients see the Allovo name?</summary><p>No. The dashboard, login page, emails and invoices carry your name, logo, colours and domain.</p></details>
     </div>
   </div>
@@ -361,9 +367,10 @@ curl https://api.allovo.eu/v1/calls \
     <h2>Every call answered, in your caller’s language.</h2>
     <p>Build your first agent today. 60 free minutes, no card.</p>
     <div class="hero-actions">
-      <a class="btn btn-signal btn-lg" href="#top">Build your agent</a>
+      <a class="btn btn-signal btn-lg" href="#start" data-signup>Build your agent</a>
       <a class="btn btn-ghost-dark btn-lg" href="#white-label">White label for agencies</a>
     </div>
+    <p class="signup-note" id="signupNote" role="status" hidden>Sign-up opens at launch. This is a preview.</p>
   </div>
 </section>
 
@@ -380,6 +387,6 @@ curl https://api.allovo.eu/v1/calls \
 </footer>
 
 <audio id="player" preload="none"></audio>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
