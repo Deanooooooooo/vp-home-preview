@@ -233,7 +233,7 @@ p{margin:0}
 .faq-list details p{padding:0 44px 24px 0;color:var(--ink-2)}
 
 /* closer */
-.closer{padding:128px 0 120px;text-align:center;border-top:1px solid var(--line);background:radial-gradient(60% 80% at 50% 0%,var(--a1-tint),#fff 70%)}
+.closer{padding:128px 0 120px;text-align:center;border-top:1px solid var(--line)}
 .closer-in{display:flex;flex-direction:column;align-items:center}
 .closer-flaps{display:flex;gap:4px;margin-bottom:36px;flex-wrap:wrap;justify-content:center}
 .closer-flaps .cell{width:38px;max-width:none;flex:none;font-size:24px}
@@ -257,7 +257,7 @@ p{margin:0}
 .nb{white-space:nowrap}
 .hero,.who,.bench,.steps,.stack,.faq,.studio,.dev,.pricing,.tension,.closer,.marquee,.footer{position:relative}
 .hero::before,.who::before,.bench::before,.steps::before,.stack::before,.faq::before,.studio::before,.dev::before,.pricing::before,.tension::before,.closer::before,.marquee::before,.footer::before{content:"";position:absolute;top:0;bottom:0;left:var(--rail);right:var(--rail);border-left:1px solid var(--line);border-right:1px solid var(--line);pointer-events:none}
-.hero{background:radial-gradient(1200px 500px at 85% -10%,var(--a1-tint),transparent 60%),#fff}
+
 /* marquee */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:22px 0;background:#fff}
 .marquee-track{display:flex;gap:56px;width:max-content;animation:marq 48s linear infinite}
@@ -313,6 +313,31 @@ p{margin:0}
 .nav a.is-active{color:var(--ink)}
 .nav a{position:relative}
 .nav a.is-active::after{content:"";position:absolute;left:0;right:0;bottom:-23px;height:2px;background:var(--a1)}
+
+
+/* gradient mesh backgrounds (preview: ?bg=aurora|dawn|riviera|none) */
+:root,[data-bg="aurora"]{--m1:#A9B6FF;--m2:#FFD46B;--m3:#AEE8D2;--m4:#D9CFFF}
+[data-bg="dawn"]{--m1:#FFBE9F;--m2:#CDBEFF;--m3:#B5D3FF;--m4:#FFE2B5}
+[data-bg="riviera"]{--m1:#95D9EA;--m2:#B4BEFF;--m3:#FFDD85;--m4:#BDEEDD}
+.hero,.closer{overflow:hidden}
+.hero{background:#fff}
+.mesh{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.mesh i{position:absolute;border-radius:50%;filter:blur(56px);opacity:1;will-change:transform}
+.mesh .b1{width:56vw;height:56vw;max-width:820px;max-height:820px;right:-12vw;top:-30%;background:radial-gradient(circle at 40% 40%,var(--m1),transparent 66%);animation:drift1 26s ease-in-out infinite alternate}
+.mesh .b2{width:40vw;height:40vw;max-width:600px;max-height:600px;right:24vw;top:38%;background:radial-gradient(circle,var(--m2),transparent 64%);animation:drift2 32s ease-in-out infinite alternate}
+.mesh .b3{width:46vw;height:46vw;max-width:700px;max-height:700px;left:-14vw;bottom:-40%;background:radial-gradient(circle,var(--m3),transparent 66%);animation:drift3 28s ease-in-out infinite alternate}
+.mesh .grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes drift1{to{transform:translate(-6vw,6vh) scale(1.08)}}
+@keyframes drift2{to{transform:translate(8vw,-8vh) scale(.92)}}
+@keyframes drift3{to{transform:translate(6vw,-4vh) scale(1.1)}}
+.hero>.wrap,.closer>.wrap{position:relative;z-index:1}
+.hero::before,.closer::before{z-index:1}
+.closer{background:#fff}
+.closer .mesh .b1{right:auto;left:20%;top:-40%;background:radial-gradient(circle,var(--m4),transparent 66%)}
+.closer .mesh .b2{right:8%;top:20%}
+.closer .mesh .b3{left:-6%;bottom:-50%}
+[data-bg="none"] .mesh{display:none}
+.board{background:rgba(255,255,255,.72);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
 
 /* scroll-driven reveals: motion tied to reading, no hover gimmicks */
 @supports (animation-timeline: view()){
@@ -384,5 +409,6 @@ p{margin:0}
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js-split .w>span{transform:none}
   .js .cc-feed li{opacity:1;transform:none}
+  .mesh i{animation:none}
   .marquee{display:none}
 }
