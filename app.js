@@ -138,7 +138,7 @@
   nameIn.addEventListener("input", brand); brand();
 
   // margin calculator
-  const OUR = 0.09;
+  const OUR = 0.15;
   const fmt = n => "€" + Math.round(n).toLocaleString("en-GB");
   const rC = $("#rClients"), rM = $("#rMinutes"), rP = $("#rPrice");
   function calc() {
