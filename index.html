@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=14">
+<link rel="stylesheet" href="styles.css?v=16">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","name":"Allovo","description":"European voice AI platform: AI phone agents for businesses, white label for agencies, API for developers."},
@@ -61,6 +61,7 @@
 <!-- 1 HOOK -->
 <section class="hero">
   <div class="mesh" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="grain"></span></div>
+  <canvas class="ribbon" id="ribbon" aria-hidden="true"></canvas>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Voice AI platform · built in the EU</p>
@@ -88,7 +89,7 @@
           <button class="play-btn" type="button" id="boardPlay" aria-label="Play this greeting">
             <span class="play-ico" aria-hidden="true"></span>
           </button>
-          <div class="bars" id="bars" aria-hidden="true"></div>
+          <div class="bars" id="bars" aria-hidden="true"></div><canvas class="scope" id="scope" aria-hidden="true"></canvas>
           <span class="board-meta" id="boardMeta"></span>
         </div>
         <ol class="board-list" id="boardList"></ol>
@@ -188,10 +189,10 @@
     <div class="callcard" aria-label="Example call, Dutch dental practice">
       <div class="cc-head"><span class="cc-dot"></span><span>Incoming call · +31 20 555 0134</span><span class="cc-time" id="ccTime">00:00</span></div>
       <ol class="cc-feed">
-        <li class="cc-a"><span>Mila</span>Goedemiddag, tandartspraktijk De Vries, u spreekt met Mila.</li>
+        <li class="cc-a"><span>Mila <i class="eq"><b></b><b></b><b></b></i></span>Goedemiddag, tandartspraktijk De Vries, u spreekt met Mila.</li>
         <li class="cc-c"><span>Caller</span>Ik wil graag een afspraak voor een controle.</li>
         <li class="cc-ev"><i></i>Checked calendar · Thu 10:30 free</li>
-        <li class="cc-a"><span>Mila</span>Donderdag om half elf kan. Zal ik die voor u vastzetten?</li>
+        <li class="cc-a"><span>Mila <i class="eq"><b></b><b></b><b></b></i></span>Donderdag om half elf kan. Zal ik die voor u vastzetten?</li>
         <li class="cc-c"><span>Caller</span>Ja, graag.</li>
         <li class="cc-ev cc-ok"><i></i>Booked · confirmation sent by SMS</li>
         <li class="cc-ev"><i></i>Summary emailed to the practice</li>
@@ -375,7 +376,9 @@
 <section class="closer" id="start">
   <div class="mesh" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="grain"></span></div>
   <div class="wrap closer-in">
-    <div class="closer-flaps" aria-hidden="true" id="closerFlaps"></div>
+    <button class="orb" id="orb" type="button" aria-label="Hear Mila say hello in English"><canvas id="orbCanvas" aria-hidden="true"></canvas><span class="orb-core"><span class="play-ico" aria-hidden="true"></span></span></button>
+    <p class="orb-cap">Tap to hear Mila</p>
+    <div class="closer-flaps" aria-hidden="true" id="closerFlaps" hidden></div>
     <h2>Every call answered, in your caller’s language.</h2>
     <p>Build your first agent today. 60 free minutes, no card.</p>
     <div class="hero-actions">
@@ -399,6 +402,7 @@
 </footer>
 
 <audio id="player" preload="none"></audio>
-<script src="app.js?v=13"></script>
+<script src="app.js?v=15"></script>
+<script src="voice.js?v=5"></script>
 </body>
 </html>
