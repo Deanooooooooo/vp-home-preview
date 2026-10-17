@@ -4,6 +4,7 @@
   if (h1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const words = h1.textContent.trim().split(/\s+/);
     h1.setAttribute("aria-label", h1.textContent.trim());
+    h1.classList.add("js-split");
     h1.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(" ");
   }
   const LANGS = [
