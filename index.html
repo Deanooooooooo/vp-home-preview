@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>White Label Voice AI Platform for Agencies | Allovo</title>
+<meta name="description" content="White-label voice AI for agencies across Europe. Phone agents that sound local in every European language, data processed in the EU, one price per minute.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="White-label voice AI for agencies, in every European language">
+<meta property="og:description" content="Build phone agents, put your brand on them and bill your clients. Local voices, EU data, one price per minute.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","name":"Allovo","description":"White-label voice AI platform for agencies in Europe."},
+{"@type":"WebSite","name":"Allovo"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a white-label voice AI platform?","acceptedAnswer":{"@type":"Answer","text":"It is the engine behind AI phone agents that an agency sells under its own name. Allovo runs the calls, voices and language model; your clients only see your brand, your domain and your invoices."}},
+{"@type":"Question","name":"Which languages can my agents speak?","acceptedAnswer":{"@type":"Answer","text":"The ten languages you can hear on this page: English, Dutch, German, French, Spanish, Italian, Polish, Bulgarian, Romanian and Swedish. Each one uses a voice built for that language, not an English voice reading a translation."}},
+{"@type":"Question","name":"Where is call data processed and stored?","acceptedAnswer":{"@type":"Answer","text":"Inside the European Union. Speech recognition, the language model, the voice and storage all run in EU regions, and the sub-processor list names every company and region."}},
+{"@type":"Question","name":"How much does Allovo cost?","acceptedAnswer":{"@type":"Answer","text":"One price per minute with speech, language model, voice and platform included. Phone numbers are charged at cost. There is no monthly platform fee."}},
+{"@type":"Question","name":"Can I move agents from Retell or Vapi?","acceptedAnswer":{"@type":"Answer","text":"Yes. Import an agent's prompt, tools and settings, test it side by side, then point the phone number to Allovo when you are happy."}},
+{"@type":"Question","name":"Will my clients see the Allovo name?","acceptedAnswer":{"@type":"Answer","text":"No. The dashboard, login page, emails and invoices carry your name, logo, colours and domain."}}
+]}
+]}
+</script>
+</head>
+<body>
+<div class="preview-bar">Preview draft · working name “Allovo” · prices and free minutes not final</div>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Allovo home">
+      <span class="logo-tile" aria-hidden="true"><span>a</span></span>
+      <span class="logo-word">allovo</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#languages">Languages</a>
+      <a href="#white-label">White label</a>
+      <a href="#data">EU data</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">Docs</a>
+    </nav>
+    <div class="header-cta">
+      <a class="link-quiet" href="#">Log in</a>
+      <a class="btn btn-ink" href="#start">Start free</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1 HOOK -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Voice AI engine for agencies · built in the EU</p>
+      <h1>White-label voice AI for agencies, in every European language.</h1>
+      <p class="lede">Build phone agents, put your brand on them and bill your clients. Voices that sound local, data that stays in the EU, one price per minute.</p>
+      <div class="hero-actions">
+        <a class="btn btn-signal btn-lg" href="#start">Start free</a>
+        <button class="btn btn-ghost btn-lg" type="button" data-play-current>
+          <span class="play-ico" aria-hidden="true"></span> Hear it in Dutch
+        </button>
+      </div>
+      <p class="micro">60 free minutes · no card · your brand from day one</p>
+    </div>
+
+    <div class="board-wrap">
+      <div class="board" id="board" aria-label="Sample greetings in European languages">
+        <div class="board-head">
+          <span>Now answering</span>
+          <span class="live"><i></i>EU-West</span>
+        </div>
+        <div class="board-main">
+          <div class="flaps flaps-city" id="flapCity" aria-hidden="true"></div>
+          <div class="flaps flaps-lang" id="flapLang" aria-hidden="true"></div>
+        </div>
+        <p class="board-line" id="boardLine" aria-live="polite"></p>
+        <div class="board-player">
+          <button class="play-btn" type="button" id="boardPlay" aria-label="Play this greeting">
+            <span class="play-ico" aria-hidden="true"></span>
+          </button>
+          <div class="bars" id="bars" aria-hidden="true"></div>
+          <span class="board-meta" id="boardMeta"></span>
+        </div>
+        <ol class="board-list" id="boardList"></ol>
+      </div>
+      <p class="board-caption">Same receptionist, same script. Tap a city to hear her.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 TENSION -->
+<section class="tension">
+  <div class="wrap">
+    <h2 class="h2-light">Your clients don’t call in English.</h2>
+    <div class="tension-grid">
+      <article>
+        <span class="tag">01 · Voice</span>
+        <h3>A Dutch receptionist shouldn’t sound like a tourist.</h3>
+        <p>Many platforms are built for American English first. Callers hear the accent in the first second and ask for a human.</p>
+      </article>
+      <article>
+        <span class="tag">02 · Data</span>
+        <h3>Your client’s privacy officer will ask where the call went.</h3>
+        <p>Speech, transcript and recording often pass through US services. With Allovo every layer runs in an EU region, and you can show which one.</p>
+      </article>
+      <article>
+        <span class="tag">03 · Margin</span>
+        <h3>Five vendors, five invoices, a margin that moves.</h3>
+        <p>Phone line, speech, model, voice and platform usually bill separately. We put them in one price per minute, so your margin stays where you set it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3 PROOF BY EAR -->
+<section class="bench" id="languages">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Languages</p>
+      <h2>Same receptionist. Ten languages. Press play.</h2>
+      <p>Every language has its own voice, built for it. Not an English voice reading a translation.</p>
+    </div>
+    <div class="bench-grid" id="benchGrid"></div>
+  </div>
+</section>
+
+<!-- 4 DEMONSTRATION -->
+<section class="studio" id="white-label">
+  <div class="wrap studio-grid">
+    <div class="studio-controls">
+      <p class="eyebrow">White label</p>
+      <h2>Your name on everything your client sees.</h2>
+      <p>Dashboard, login page, emails, invoices and the web address. Try it with your agency.</p>
+      <label class="field">
+        <span>Your agency name</span>
+        <input id="agencyName" type="text" value="Northwind Digital" maxlength="28" autocomplete="organization">
+      </label>
+      <fieldset class="swatches">
+        <legend>Brand colour</legend>
+        <div class="swatch-row" id="swatches"></div>
+      </fieldset>
+      <ul class="ticks">
+        <li>Custom domain and SSL</li>
+        <li>Client sub-accounts with their own numbers</li>
+        <li>Emails and invoices sent in your name</li>
+      </ul>
+    </div>
+
+    <div class="app-window" id="appWindow" aria-label="Preview of a white-label client dashboard">
+      <div class="app-bar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="url" id="appUrl">app.northwinddigital.eu</span>
+      </div>
+      <div class="app-body">
+        <aside class="app-side">
+          <div class="app-brand"><span class="app-mark" id="appMark">N</span><span id="appBrand">Northwind Digital</span></div>
+          <span class="side-item is-on">Clients</span>
+          <span class="side-item">Agents</span>
+          <span class="side-item">Numbers</span>
+          <span class="side-item">Billing</span>
+        </aside>
+        <div class="app-main">
+          <div class="app-kpis">
+            <div><span>Calls answered</span><b>3,912</b></div>
+            <div><span>Minutes</span><b>9,480</b></div>
+            <div><span>Your margin</span><b class="accent-text">€1,991</b></div>
+          </div>
+          <table class="app-table">
+            <thead><tr><th>Client</th><th>Lang</th><th>Minutes</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>De Vries Tandartsen</td><td>NL</td><td>2,140</td><td><span class="pill">Live</span></td></tr>
+              <tr><td>Bäckerei Krüger</td><td>DE</td><td>1,385</td><td><span class="pill">Live</span></td></tr>
+              <tr><td>Cabinet Martin</td><td>FR</td><td>3,020</td><td><span class="pill">Live</span></td></tr>
+              <tr><td>Hotel Stella</td><td>IT</td><td>2,935</td><td><span class="pill pill-test">Testing</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 HOW IT WORKS -->
+<section class="steps">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Build it, brand it, bill it.</h2>
+    </div>
+    <ol class="steps-grid">
+      <li>
+        <span class="step-no">1</span>
+        <h3>Build</h3>
+        <p>Start from a template for reception, bookings or lead qualification, or import an agent you already run on Retell or Vapi. Test it in the browser before it takes a real call.</p>
+      </li>
+      <li>
+        <span class="step-no">2</span>
+        <h3>Brand</h3>
+        <p>Add your logo, colours and domain once. Every client gets a sub-account with its own agents, phone numbers and call history.</p>
+      </li>
+      <li>
+        <span class="step-no">3</span>
+        <h3>Bill</h3>
+        <p>Set your own price per minute for each client. We invoice you at one rate; you invoice your clients, or we bill them in your name.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 6 TRUST -->
+<section class="stack" id="data">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">EU data</p>
+      <h2>Every layer of a call, and where it runs.</h2>
+      <p>No badges. The company behind each layer and the region it runs in, so you can answer your client’s privacy officer in one email.</p>
+    </div>
+    <div class="stack-table" role="table" aria-label="Where each layer of a call runs">
+      <div class="stack-row stack-headrow" role="row"><span role="columnheader">Layer</span><span role="columnheader">Provider</span><span role="columnheader">Region</span></div>
+      <div class="stack-row" role="row"><span role="cell"><b>Phone line</b><em>Calls in and out</em></span><span role="cell">EU carriers over SIP</span><span role="cell"><i class="eu-dot"></i>EU</span></div>
+      <div class="stack-row" role="row"><span role="cell"><b>Speech to text</b><em>Hearing the caller</em></span><span role="cell">Soniox</span><span role="cell"><i class="eu-dot"></i>EU region</span></div>
+      <div class="stack-row" role="row"><span role="cell"><b>Language model</b><em>Deciding what to say</em></span><span role="cell">Claude on AWS Bedrock</span><span role="cell"><i class="eu-dot"></i>Frankfurt · Ireland · Stockholm</span></div>
+      <div class="stack-row" role="row"><span role="cell"><b>Voice</b><em>Speaking back</em></span><span role="cell">Soniox</span><span role="cell"><i class="eu-dot"></i>EU region</span></div>
+      <div class="stack-row" role="row"><span role="cell"><b>App, data, recordings</b><em>Everything we store</em></span><span role="cell">Hetzner</span><span role="cell"><i class="eu-dot"></i>Germany · Finland</span></div>
+    </div>
+    <div class="stack-links">
+      <a href="#">Sub-processor list</a>
+      <a href="#">Data processing agreement</a>
+      <a href="#">Security overview</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7 CHOICE -->
+<section class="pricing" id="pricing">
+  <div class="wrap pricing-grid">
+    <div class="price-card">
+      <p class="eyebrow">Pricing</p>
+      <h2>One price per minute. Your margin on top.</h2>
+      <div class="price-big"><span class="cur">€</span>0.09<span class="per">/ minute</span></div>
+      <ul class="ticks">
+        <li>Speech, language model, voice and platform included</li>
+        <li>Phone numbers at cost</li>
+        <li>No monthly platform fee, no setup fee</li>
+        <li>Spend cap and an alert at 80%</li>
+      </ul>
+      <a class="btn btn-signal btn-lg" href="#start">Start free with 60 minutes</a>
+    </div>
+
+    <div class="calc" aria-label="Margin calculator">
+      <h3>What you keep each month</h3>
+      <label class="range">
+        <span>Clients <output id="oClients">10</output></span>
+        <input type="range" id="rClients" min="1" max="60" value="10">
+      </label>
+      <label class="range">
+        <span>Minutes per client <output id="oMinutes">800</output></span>
+        <input type="range" id="rMinutes" min="100" max="4000" step="50" value="800">
+      </label>
+      <label class="range">
+        <span>Your price per minute <output id="oPrice">€0.30</output></span>
+        <input type="range" id="rPrice" min="0.12" max="0.60" step="0.01" value="0.30">
+      </label>
+      <div class="calc-out">
+        <div><span>You bill</span><b id="cRevenue">€2,400</b></div>
+        <div><span>We bill you</span><b id="cCost">€720</b></div>
+        <div class="calc-margin"><span>Your margin</span><b id="cMargin">€1,680</b></div>
+      </div>
+      <p class="calc-note">Phone numbers not included. Example only, your prices are yours to set.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 CLOSE -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="section-head">
+      <p class="eyebrow">Questions agencies ask</p>
+      <h2>Straight answers.</h2>
+    </div>
+    <div class="faq-list">
+      <details open><summary>What is a white-label voice AI platform?</summary><p>It is the engine behind AI phone agents that an agency sells under its own name. Allovo runs the calls, voices and language model; your clients only see your brand, your domain and your invoices.</p></details>
+      <details><summary>Which languages can my agents speak?</summary><p>The ten languages you can hear on this page: English, Dutch, German, French, Spanish, Italian, Polish, Bulgarian, Romanian and Swedish. Each one uses a voice built for that language, not an English voice reading a translation.</p></details>
+      <details><summary>Where is call data processed and stored?</summary><p>Inside the European Union. Speech recognition, the language model, the voice and storage all run in EU regions, and the sub-processor list names every company and region.</p></details>
+      <details><summary>How much does Allovo cost?</summary><p>One price per minute with speech, language model, voice and platform included. Phone numbers are charged at cost. There is no monthly platform fee.</p></details>
+      <details><summary>Can I move agents from Retell or Vapi?</summary><p>Yes. Import an agent’s prompt, tools and settings, test it side by side, then point the phone number to Allovo when you are happy.</p></details>
+      <details><summary>Will my clients see the Allovo name?</summary><p>No. The dashboard, login page, emails and invoices carry your name, logo, colours and domain.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="closer" id="start">
+  <div class="wrap closer-in">
+    <div class="closer-flaps" aria-hidden="true" id="closerFlaps"></div>
+    <h2>Your brand. Their language. Our engine.</h2>
+    <p>Build your first agent today. 60 free minutes, no card.</p>
+    <div class="hero-actions">
+      <a class="btn btn-signal btn-lg" href="#">Start free</a>
+      <a class="btn btn-ghost-dark btn-lg" href="#">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div class="logo logo-foot"><span class="logo-tile" aria-hidden="true"><span>a</span></span><span class="logo-word">allovo</span></div>
+    <nav aria-label="Footer">
+      <a href="#languages">Languages</a><a href="#white-label">White label</a><a href="#data">EU data</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    </nav>
+    <p class="foot-note">Voice AI engine for agencies · built and hosted in the EU</p>
+  </div>
+</footer>
+
+<audio id="player" preload="none"></audio>
+<script src="app.js?v=1"></script>
+</body>
+</html>
