@@ -132,8 +132,8 @@
   });
 
   // white-label studio
-  const COLORS = ["#2E46F0", "#FF5A1F", "#0F8A6A", "#7A3FE4", "#D61F69", "#14161C"];
-  const CNAMES = ["Blue", "Orange", "Green", "Purple", "Pink", "Black"];
+  const COLORS = ["#4C1E62", "#2E46F0", "#0F8A6A", "#7A3FE4", "#D61F69", "#14161C"];
+  const CNAMES = ["Aubergine", "Blue", "Green", "Purple", "Pink", "Black"];
   const sw = $("#swatches"), app = $("#appWindow");
   COLORS.forEach((c, i) => {
     const b = document.createElement("button"); b.type = "button"; b.className = "swatch"; b.style.background = c;
