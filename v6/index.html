@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Phone Agents That Handle Every Call | Allovo</title>
+<meta name="description" content="Allovo answers your calls, books, sells and helps, then sends you the summary. Live this afternoon. One price a minute, everything included.">
+<meta name="robots" content="noindex, nofollow">
+<script>document.documentElement.classList.add("js")</script>
+<meta property="og:title" content="Every call, handled.">
+<meta property="og:description" content="AI phone agents that answer, book, sell and help. Live this afternoon. One price a minute.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","name":"Allovo","description":"AI phone agents that answer, book, sell and help on every call."},
+{"@type":"WebSite","name":"Allovo"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How fast can I go live?","acceptedAnswer":{"@type":"Answer","text":"Most businesses go live the same afternoon. Describe your business, listen to a test call, then forward your number."}},
+{"@type":"Question","name":"What can it do on a call?","acceptedAnswer":{"@type":"Answer","text":"It answers, books and moves appointments, takes orders, answers questions, passes the call to a person when needed and sends you a short summary afterwards."}},
+{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"One price per minute with everything included. There is no monthly fee and no setup fee, and you start with 60 free minutes."}},
+{"@type":"Question","name":"Can I keep my phone number?","acceptedAnswer":{"@type":"Answer","text":"Yes. Forward your existing number to your agent, or get a new local number in a few clicks."}},
+{"@type":"Question","name":"Can I sell it to my clients under my own name?","acceptedAnswer":{"@type":"Answer","text":"Yes. Agencies get their own name, logo, domain and prices. Your clients only ever see your brand."}}
+]}
+]}
+</script>
+</head>
+<body>
+<div class="preview-bar">Preview v6 · working name, sample voices, prices are placeholders</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="logo" href="#top" aria-label="Allovo home">
+      <span class="logo-line" aria-hidden="true"><i></i></span>
+      <span class="logo-word">allovo</span>
+    </a>
+    <nav class="nav" id="mainNav" aria-label="Main">
+      <a href="#business">Businesses</a>
+      <a href="#agency">Agencies</a>
+      <a href="#product">Developers</a>
+      <a href="#pricing">Pricing</a>
+      <div class="nav-mobile-cta">
+        <a class="btn btn-solid btn-lg" href="#start" data-signup>Start free</a>
+        <a class="link-quiet" href="#start" data-signup>Log in</a>
+      </div>
+    </nav>
+    <div class="header-cta">
+      <a class="link-quiet" href="#start" data-signup>Log in</a>
+      <a class="btn btn-solid" href="#start" data-signup>Start free</a>
+    </div>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <h1>Every call, handled.</h1>
+    <p class="lede">Allovo answers your phone the way your best person would. It books, sells and helps, then tells you what happened.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid btn-lg" href="#start" data-signup>Start free</a>
+      <button class="text-btn" type="button" data-play-call><span class="play-ico" aria-hidden="true"></span>Hear it take a call</button>
+    </div>
+    <p class="signup-note" hidden>Sign-up opens at launch. This is a preview.</p>
+  </div>
+
+  <div class="wrap">
+    <figure class="call" id="call" aria-label="Example call: a restaurant table booking">
+      <div class="call-top">
+        <span class="call-who"><span class="live-dot" aria-hidden="true"></span>Incoming call · Trattoria Sole</span>
+        <span class="call-time mono" id="callTime">0:00</span>
+      </div>
+      <div class="call-line" aria-hidden="true"><svg viewBox="0 0 1000 60" preserveAspectRatio="none"><path id="wave" d="M0 30 L1000 30"/></svg></div>
+      <div class="call-body">
+        <ol class="talk" id="talk">
+          <li class="c" data-t="0">Hi, have you got a table for four tonight?</li>
+          <li class="a" data-t="3.69">We do. 7:30 or quarter past 8?</li>
+          <li class="c" data-t="8.12">7:30, please.</li>
+          <li class="a" data-t="11.19">Lovely. What name shall I put it under?</li>
+          <li class="c" data-t="14.86">Martin.</li>
+          <li class="a" data-t="17.18">All booked, Martin. Four people at 7:30. I’ll text you the confirmation now.</li>
+          <li class="c" data-t="24.37">Perfect, thanks.</li>
+        </ol>
+        <div class="done" id="done">
+          <span class="mono done-label">Done during the call</span>
+          <div class="done-card" data-t="20.4">
+            <span class="tick" aria-hidden="true"></span>
+            <div><b>Table for 4</b><span>Tonight · 19:30 · Martin</span></div>
+          </div>
+          <div class="done-row" data-t="23.2"><span class="dot" aria-hidden="true"></span>Confirmation sent by text</div>
+          <div class="done-row" data-t="26.4"><span class="dot" aria-hidden="true"></span>Summary in your inbox</div>
+        </div>
+      </div>
+      <figcaption>Example call with sample voices. <button class="text-btn" type="button" data-play-call><span class="play-ico" aria-hidden="true"></span><span data-play-label>Play with sound</span></button></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="specs" aria-label="At a glance">
+  <div class="wrap specs-in">
+    <div><b>Every call</b><span>answered at once, day and night</span></div>
+    <div><b>This afternoon</b><span>from sign-up to live</span></div>
+    <div><b>€0.15</b><span>a minute, everything included</span></div>
+    <div><b>€0</b><span>monthly fee</span></div>
+  </div>
+</section>
+
+<section class="block" id="does">
+  <div class="wrap">
+    <div class="head">
+      <span class="one-line" aria-hidden="true"></span>
+      <h2>It does the whole call.</h2>
+      <p>Not just the hello. Everything that comes after it.</p>
+    </div>
+    <div class="jobs">
+      <article class="job"><h3>Answers</h3><p>Straight away, every time. Even when ten people ring at once.</p><span class="mono eg">Ring · picked up</span></article>
+      <article class="job"><h3>Books</h3><p>Appointments, tables and visits go straight into your calendar. Moves and cancels too.</p><span class="mono eg">Thu 14:00 · booked</span></article>
+      <article class="job"><h3>Sells and helps</h3><p>Answers questions, takes orders and sorts out problems, using what you taught it.</p><span class="mono eg">Order #2291 · taken</span></article>
+      <article class="job"><h3>Hands over</h3><p>When a call needs you, it passes it on with the whole story, so nobody repeats themselves.</p><span class="mono eg">Transferred · with notes</span></article>
+      <article class="job"><h3>Tells you</h3><p>A short summary after every call, in your inbox. You know everything without listening to anything.</p><span class="mono eg">Summary · sent</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="voice">
+  <div class="wrap">
+    <div class="head">
+      <span class="one-line" aria-hidden="true"></span>
+      <h2>Sounds like your best person.</h2>
+      <p>Warm, quick and never reading from a script. In your caller’s language, too.</p>
+    </div>
+    <div class="langs" role="group" aria-label="Hear a greeting">
+      <button type="button" data-lang="en">English</button>
+      <button type="button" data-lang="de">Deutsch</button>
+      <button type="button" data-lang="fr">Français</button>
+      <button type="button" data-lang="nl">Nederlands</button>
+      <button type="button" data-lang="es">Español</button>
+      <button type="button" data-lang="it">Italiano</button>
+      <button type="button" data-lang="pl">Polski</button>
+      <button type="button" data-lang="sv">Svenska</button>
+      <button type="button" data-lang="ro">Română</button>
+      <button type="button" data-lang="bg">Български</button>
+    </div>
+    <p class="small-note">Tap a language to hear a greeting. Sample voices.</p>
+  </div>
+</section>
+
+<section class="block" id="live">
+  <div class="wrap">
+    <div class="head">
+      <span class="one-line" aria-hidden="true"></span>
+      <h2>Live this afternoon.</h2>
+      <p>No project, no consultants, no waiting. Three short steps.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="mono when">14:00</span><h3>Tell it about your business</h3><p>Paste your website or just describe what you do, in plain words.</p></div>
+      <div class="step"><span class="mono when">14:20</span><h3>Hear it take a test call</h3><p>Call it yourself. Want something said differently? Just say so.</p></div>
+      <div class="step"><span class="mono when">14:45</span><h3>Forward your number</h3><p>That’s it. From the next ring, your calls are handled.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block price" id="pricing">
+  <div class="wrap price-in">
+    <div class="price-copy">
+      <span class="one-line" aria-hidden="true"></span>
+      <h2>One price.<br>One line on your bill.</h2>
+      <p class="big-price"><b>€0.15</b> a minute, everything included.</p>
+      <ul class="plain">
+        <li>No monthly fee, no setup fee</li>
+        <li>60 free minutes to start</li>
+        <li>Complex calls cost the same as simple ones</li>
+        <li>Set a spending limit and never get a surprise</li>
+      </ul>
+      <a class="btn btn-solid btn-lg" href="#start" data-signup>Start free</a>
+    </div>
+    <div class="bill" aria-label="Example monthly bill">
+      <div class="bill-head"><span class="logo-line" aria-hidden="true"><i></i></span><span>allovo</span><span class="mono">October</span></div>
+      <label class="bill-row">
+        <span>Calls</span>
+        <span class="mono"><output id="mins">400</output> min</span>
+        <b class="mono" id="cost">€60.00</b>
+      </label>
+      <input type="range" id="minRange" min="100" max="5000" step="50" value="400" aria-label="Minutes per month">
+      <div class="bill-total"><span>Total</span><b class="mono" id="total">€60.00</b></div>
+      <p class="small-note">Drag to see your month. That line is the whole bill.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="yours">
+  <div class="wrap">
+    <div class="head">
+      <span class="one-line" aria-hidden="true"></span>
+      <h2>Yours, however you work.</h2>
+      <p>Same agent, three ways in.</p>
+    </div>
+    <div class="doors">
+      <article class="door" id="business">
+        <span class="mono tag">For your business</span>
+        <h3>Stop chasing the phone.</h3>
+        <p>Your agent picks up, books and sends you the summary. You get on with the work in front of you.</p>
+        <a class="btn btn-ink" href="#start" data-signup>Start free</a>
+      </article>
+      <article class="door" id="agency">
+        <span class="mono tag">For agencies</span>
+        <h3>Sell it as your own.</h3>
+        <p>Your name, your logo, your prices. Your clients see your brand and you keep the margin.</p>
+        <a class="btn btn-ink" href="#start" data-signup>Become a partner</a>
+      </article>
+      <article class="door" id="product">
+        <span class="mono tag">For your product</span>
+        <h3>Give your app a voice.</h3>
+        <p>A few lines of code, and your product can take calls and make them. Same price per minute.</p>
+        <a class="btn btn-ink" href="#start" data-signup>Get an API key</a>
+      </article>
+    </div>
+    <p class="trust">Built and hosted in Europe. Your calls stay yours.</p>
+  </div>
+</section>
+
+<section class="block faq" id="faq">
+  <div class="wrap faq-in">
+    <h2>Questions.</h2>
+    <div class="qs">
+      <details><summary>How fast can I go live?</summary><p>Most businesses go live the same afternoon. Describe your business, listen to a test call, then forward your number.</p></details>
+      <details><summary>What can it do on a call?</summary><p>It answers, books and moves appointments, takes orders, answers questions, passes the call to a person when needed and sends you a short summary afterwards.</p></details>
+      <details><summary>What does it cost?</summary><p>One price per minute with everything included. There is no monthly fee and no setup fee, and you start with 60 free minutes.</p></details>
+      <details><summary>Can I keep my phone number?</summary><p>Yes. Forward your existing number to your agent, or get a new local number in a few clicks.</p></details>
+      <details><summary>Can I sell it to my clients under my own name?</summary><p>Yes. Agencies get their own name, logo, domain and prices. Your clients only ever see your brand.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="start">
+  <div class="wrap close-in">
+    <span class="one-line" aria-hidden="true"></span>
+    <h2>Your next call, handled.</h2>
+    <p>Start with 60 free minutes. No card needed.</p>
+    <a class="btn btn-solid btn-lg" href="#start" data-signup>Start free</a>
+    <p class="signup-note" hidden>Sign-up opens at launch. This is a preview.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="logo" href="#top" aria-label="Allovo home"><span class="logo-line" aria-hidden="true"><i></i></span><span class="logo-word">allovo</span></a>
+    <p class="sign">One line. Every call.</p>
+    <nav aria-label="Footer"><a href="#business">Businesses</a><a href="#agency">Agencies</a><a href="#product">Developers</a><a href="#pricing">Pricing</a><a href="../">Technical overview</a></nav>
+  </div>
+</footer>
+
+<audio id="player" preload="none"></audio>
+<script src="app.js?v=1"></script>
+</body>
+</html>
