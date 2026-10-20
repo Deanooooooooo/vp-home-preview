@@ -420,7 +420,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 
 /* header fit with 5 nav items + language switch */
 .nav a{white-space:nowrap}
-@media (max-width:1360px){.header-cta .link-quiet{display:none}.nav a{padding:8px 10px}}
+@media (max-width:1520px){.header-cta .link-quiet{display:none}.nav a{padding:8px 10px}}
 @media (max-width:1180px){
   .nav,.header-cta{display:none}
   .burger{display:block}
