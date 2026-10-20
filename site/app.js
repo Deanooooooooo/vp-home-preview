@@ -133,8 +133,23 @@
     range.addEventListener('input', bill); bill();
   }
 
+
+  /* agency margin calculator */
+  const aC = $('#aClientsR');
+  if (aC) {
+    const aM = $('#aMinsR'), aP = $('#aPriceR');
+    const eur = n => '€' + Math.round(n).toLocaleString('en-GB');
+    const calc = () => {
+      const c = +aC.value, m = +aM.value, p = +aP.value, min = c * m;
+      $('#aClients').textContent = c; $('#aMins').textContent = m.toLocaleString('en-GB');
+      $('#aPrice').textContent = '€' + p.toFixed(2);
+      $('#aBill').textContent = eur(min * p); $('#aCost').textContent = eur(min * 0.15); $('#aMargin').textContent = eur(min * (p - 0.15));
+    };
+    [aC, aM, aP].forEach(r => r.addEventListener('input', calc)); calc();
+  }
+
   /* reveals + the drawn line */
-  const rv = $$('.head, .job, .step, .door, .bill, .price-copy, .specs-in > div, .qs, .langs, .table-wrap, .check, .use');
+  const rv = $$('.head, .job, .step, .door, .bill, .price-copy, .specs-in > div, .qs, .langs, .table-wrap, .check, .use, .msg, .code, .code-copy');
   rv.forEach(el => el.classList.add('rv'));
   const lineEls = $$('.one-line');
   if (reduce || !('IntersectionObserver' in window)) {

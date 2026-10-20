@@ -1,0 +1,18 @@
+name: site-qa
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', '.github/qa/**', '.github/workflows/site-qa.yml']
+  workflow_dispatch:
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm i playwright@1 && npx playwright install --with-deps chromium
+      - run: (cd site && python3 -m http.server 8080 &) && sleep 2 && node .github/qa/qa.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: site-qa, path: "shots/\nqa.log" }

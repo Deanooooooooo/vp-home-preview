@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice AI API for Phone Agents, One Price per Minute | Allovo</title>
+<meta name="description" content="Voice AI API for phone agents: create agents and calls over REST, get every call event by webhook, bring your SIP trunk. €0.15 a minute, everything included.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://deanooooooooo.github.io/vp-home-preview/site/developers/">
+<script>document.documentElement.classList.add("js")</script>
+<meta property="og:title" content="A voice AI API for phone agents">
+<meta property="og:description" content="Voice AI API for phone agents: create agents and calls over REST, get every call event by webhook, bring your SIP trunk. €0.15 a minute, everything included.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://deanooooooooo.github.io/vp-home-preview/site/developers/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=312130">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deanooooooooo.github.io/vp-home-preview/site/#org","name":"Allovo","url":"https://deanooooooooo.github.io/vp-home-preview/site/"},{"@type":"WebPage","@id":"https://deanooooooooo.github.io/vp-home-preview/site/developers/","url":"https://deanooooooooo.github.io/vp-home-preview/site/developers/","name":"Voice AI API for Phone Agents, One Price per Minute | Allovo","description":"Voice AI API for phone agents: create agents and calls over REST, get every call event by webhook, bring your SIP trunk. €0.15 a minute, everything included.","isPartOf":{"@type":"WebSite","name":"Allovo","url":"https://deanooooooooo.github.io/vp-home-preview/site/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://deanooooooooo.github.io/vp-home-preview/site/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://deanooooooooo.github.io/vp-home-preview/site/developers/"}]},{"@type":"Service","name":"Voice AI API","provider":{"@id":"https://deanooooooooo.github.io/vp-home-preview/site/#org"},"areaServed":"Europe","offers":{"@type":"Offer","priceCurrency":"EUR","price":"0.15","unitText":"minute","description":"Draft price, everything included"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is there a voice AI API?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Allovo API lets you create agents, start calls, read transcripts and recordings, and receive call events by webhook. Everything in the dashboard is also in the API."}},{"@type":"Question","name":"How much does the voice AI API cost?","acceptedAnswer":{"@type":"Answer","text":"€0.15 per minute of calls, with speech recognition, the AI model and the voice included. There is no monthly platform fee, and phone numbers are billed at cost."}},{"@type":"Question","name":"Can I bring my own SIP trunk?","acceptedAnswer":{"@type":"Answer","text":"Yes. Connect your SIP trunk or carrier, or buy local numbers through the API."}},{"@type":"Question","name":"Can the agent call my own API during a call?","acceptedAnswer":{"@type":"Answer","text":"Yes. Define tools with your endpoints, and the agent calls them during the conversation, for example to check free slots or look up an order."}},{"@type":"Question","name":"Can I move agents from another voice platform?","acceptedAnswer":{"@type":"Answer","text":"Yes. Copy the prompt and tools into a new agent over the API or in the dashboard, then point your number or SIP trunk at it."}}]}]}</script>
+</head>
+<body class="page-sub">
+<div class="preview-bar">Preview · working name, sample voices, prices are placeholders</div>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="logo" href="../" aria-label="Allovo home">
+      <span class="logo-line" aria-hidden="true"><i></i></span>
+      <span class="logo-word">allovo</span>
+    </a>
+    <nav class="nav" id="mainNav" aria-label="Main">
+      <a href="../ai-receptionist/">AI receptionist</a>
+      <a href="../agencies/">Agencies</a>
+      <a href="../developers/" class="is-active" aria-current="page">Developers</a>
+      <a href="../pricing/">Pricing</a>
+      <div class="nav-mobile-cta">
+        <a class="btn btn-solid btn-lg" href="#start" data-signup>Start free</a>
+        <a class="link-quiet" href="#start" data-signup>Log in</a>
+      </div>
+    </nav>
+    <div class="header-cta">
+      <a class="link-quiet" href="#start" data-signup>Log in</a>
+      <a class="btn btn-solid" href="#start" data-signup>Start free</a>
+    </div>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero hero-sub">
+  <div class="wrap hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span aria-hidden="true">/</span><span aria-current="page">Developers</span></nav>
+    <h1>A voice AI API for phone agents</h1>
+    <p class="lede">The Allovo API lets your product take and make phone calls with an AI agent. Create agents and calls over REST, receive every call event by webhook and connect your own SIP trunk, all for €0.15 a minute with speech, AI model and voice included.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid btn-lg" href="#start" data-signup>Get an API key</a>
+      <a class="text-btn" href="#code"><span class="play-ico" aria-hidden="true"></span>See a call in code</a>
+    </div>
+    <p class="signup-note" hidden>Sign-up opens at launch. This is a preview.</p>
+  </div>
+</section>
+
+<section class="block" id="code">
+  <div class="wrap code-grid">
+    <div class="code-copy">
+      <span class="one-line" aria-hidden="true"></span>
+      <h2>Start a call in one request</h2>
+      <p class="sub-lede">Pick an agent and a number. The agent calls, talks and sends the result to your webhook when the call ends.</p>
+      <ul class="plain">
+        <li>REST API with keys per project</li>
+        <li>Webhooks for every call event</li>
+        <li>Transcript, recording and summary per call</li>
+        <li>Same agents as the dashboard</li>
+      </ul>
+    </div>
+    <div class="code" aria-label="Example API request">
+      <div class="code-top"><span>Start an outbound call</span><span class="mono">curl</span></div>
+<pre><code><span class="c"># create the call</span>
+curl https://api.allovo.eu/v1/calls \
+  -H "Authorization: Bearer $ALLOVO_KEY" \
+  -d '{
+    "agent_id": "agt_dental_nl",
+    "to": "+31 20 555 0134",
+    "language": "nl"
+  }'
+
+<span class="c"># 201 Created</span>
+{ "id": "call_8f2c", "status": "ringing" }
+
+<span class="c"># webhook when it ends</span>
+{ "event": "call.ended", "id": "call_8f2c",
+  "duration_s": 74, "outcome": "booked",
+  "summary": "Check-up booked, Thu 10:30" }</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="build">
+  <div class="wrap">
+    <div class="head">
+      <span class="one-line" aria-hidden="true"></span>
+      <h2>What you can build with the voice AI API</h2>
+      <p>The phone side of your product, without running the voice stack yourself.</p>
+    </div>
+    <div class="checks">
+      <div class="check"><h3>Inbound agents</h3><p>Point a number at an agent and it answers, books into your system through your tools and reports back.</p></div>
+      <div class="check"><h3>Outbound calls</h3><p>Reminders, confirmations and follow-ups started from your product with one API call.</p></div>
+      <div class="check"><h3>Tools and functions</h3><p>Let the agent call your endpoints during the call to check availability, look up orders or create bookings.</p></div>
+      <div class="check"><h3>Your own phone lines</h3><p>Bring your SIP trunk or carrier, or buy local numbers through the API.</p></div>
+      <div class="check"><h3>Many languages</h3><p>Set the language per agent or per call. The agent can also follow the caller’s language.</p></div>
+      <div class="check"><h3>Accounts for your customers</h3><p>Create a workspace per customer and read usage per workspace for your own billing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="price-dev">
+  <div class="wrap">
+    <div class="head">
+      <span class="one-line" aria-hidden="true"></span>
+      <h2>One price per minute, whatever the call needs</h2>
+      <p>Speech, AI model, voice and platform are one number. Your unit cost stays the same as prompts grow.</p>
+    </div>
+    <div class="specs-in specs-plain">
+      <div><b>€0.15</b><span>per minute, all included</span></div>
+      <div><b>€0</b><span>monthly platform fee</span></div>
+      <div><b>At cost</b><span>phone numbers</span></div>
+      <div><b>60 min</b><span>free to build and test</span></div>
+    </div>
+    <p class="center-note"><a class="text-link" href="../pricing/">See full pricing</a></p>
+  </div>
+</section>
+
+<section class="block faq" id="faq">
+  <div class="wrap faq-in">
+    <h2>Developer questions</h2>
+    <div class="qs">
+      <details><summary>Is there a voice AI API?</summary><p>Yes. The Allovo API lets you create agents, start calls, read transcripts and recordings, and receive call events by webhook. Everything in the dashboard is also in the API.</p></details>
+      <details><summary>How much does the voice AI API cost?</summary><p>€0.15 per minute of calls, with speech recognition, the AI model and the voice included. There is no monthly platform fee, and phone numbers are billed at cost.</p></details>
+      <details><summary>Can I bring my own SIP trunk?</summary><p>Yes. Connect your SIP trunk or carrier, or buy local numbers through the API.</p></details>
+      <details><summary>Can the agent call my own API during a call?</summary><p>Yes. Define tools with your endpoints, and the agent calls them during the conversation, for example to check free slots or look up an order.</p></details>
+      <details><summary>Can I move agents from another voice platform?</summary><p>Yes. Copy the prompt and tools into a new agent over the API or in the dashboard, then point your number or SIP trunk at it.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="start">
+  <div class="wrap close-in">
+    <span class="one-line" aria-hidden="true"></span>
+    <h2>Give your product a phone line.</h2>
+    <p>60 free minutes to build and test. No card needed.</p>
+    <a class="btn btn-solid btn-lg" href="#start" data-signup>Get an API key</a>
+    <p class="signup-note" hidden>Sign-up opens at launch. This is a preview.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="logo" href="../" aria-label="Allovo home"><span class="logo-line" aria-hidden="true"><i></i></span><span class="logo-word">allovo</span></a>
+    <p class="sign">One line. Every call.</p>
+    <nav aria-label="Footer" class="foot-nav">
+      <div><span class="foot-h">Product</span><a href="../ai-receptionist/">AI receptionist</a><a href="../ai-answering-service/">AI answering service</a><a href="../languages/">Languages</a><a href="../pricing/">Pricing</a></div>
+      <div><span class="foot-h">Industries</span><a href="../ai-receptionist/dental/">Dental practices</a><a href="../ai-receptionist/medical/">Medical practices</a><a href="../ai-receptionist/hotels/">Hotels</a><a href="../ai-receptionist/law-firms/">Law firms</a></div>
+      <div><span class="foot-h">Partners</span><a href="../agencies/">Agencies</a><a href="../developers/">Developers</a><a href="../security/">Security and privacy</a></div>
+      <div><span class="foot-h">Compare</span><a href="../vs/retell-ai/">Retell AI pricing</a><a href="../vs/vapi/">Vapi AI pricing</a></div>
+    </nav>
+  </div>
+</footer>
+
+<audio id="player" preload="none"></audio>
+<script src="../app.js?v=312130"></script>
+</body>
+</html>
