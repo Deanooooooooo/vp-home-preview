@@ -282,3 +282,16 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
   .compare td::before{content:attr(data-label);color:var(--muted);flex:0 0 42%}
   .compare tr:last-child td{border-top:1px solid var(--line)}
 }
+.msg{border:1px solid var(--line);border-radius:28px;background:#fff;padding:30px 32px;box-shadow:0 30px 80px -60px rgba(40,20,60,.35)}
+.msg-head{display:flex;align-items:center;gap:10px;font-weight:600;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.msg-head .mono{margin-left:auto;color:var(--muted);font-weight:400;font-size:14px}
+.msg dl{margin:0}
+.msg dl>div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.msg dl>div:last-child{border-bottom:0;padding-bottom:0}
+.msg dt{color:var(--muted);font-size:15px}
+.msg dd{margin:0;color:var(--ink);font-size:16px}
+.msg dd.mono{font-size:14px;color:var(--ink-2)}
+.pill{display:inline-block;padding:3px 12px;border-radius:999px;background:var(--a1-tint);color:var(--a1);font-size:14px;font-weight:500}
+.done-urgent .tick{background:var(--a1)}
+@media (max-width:640px){.msg{padding:22px 20px}.msg dl>div{grid-template-columns:84px 1fr;gap:12px}}
+.done-urgent .tick::after{border-color:#fff}

@@ -81,6 +81,9 @@
       stopLang();
       player.src = base + audio;
       player.currentTime = 0;
+      root.classList.add('on-call');
+      if (label) label.textContent = 'Connecting…';
+      playBtns.forEach(x => x.classList.add('is-playing'));
       player.play().then(() => {
         mode = 'audio';
         root.classList.add('on-call');
@@ -88,7 +91,7 @@
         if (label) label.textContent = 'Pause';
         render(0);
         raf = requestAnimationFrame(tick);
-      }).catch(() => {});
+      }).catch(() => { mode = 'audio'; stopCall(); });
       if (window.scrollY < 200) call.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
     };
     if (audio) playBtns.forEach(b => b.addEventListener('click', playAudio));
