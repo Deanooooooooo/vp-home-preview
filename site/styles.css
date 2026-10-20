@@ -384,3 +384,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
   .tl-row span:last-child{grid-column:2}
   .rule{grid-template-columns:52px 1fr;gap:6px 10px}
 }
+@media (min-width:981px){
+  .checks:has(>.check:nth-child(4):last-child){grid-template-columns:1fr 1fr}
+  .checks:has(>.check:nth-child(4):last-child) .check{padding:34px 34px 38px 0;border-left:0}
+  .checks:has(>.check:nth-child(4):last-child) .check:nth-child(2n){padding-left:34px;border-left:1px solid var(--line)}
+}
