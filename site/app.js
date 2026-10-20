@@ -5,6 +5,10 @@
   const player = $('#player');
   const root = document.documentElement;
   const base = root.dataset.base || '';
+  const DE = root.lang === 'de';
+  const T = DE ? { play: 'Mit Ton abspielen', pause: 'Pause', conn: 'Verbinde…' } : { play: 'Play with sound', pause: 'Pause', conn: 'Connecting…' };
+  const money = (n, d = 2) => DE ? n.toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d }) + ' €' : '€' + n.toLocaleString('en-GB', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const num = n => n.toLocaleString(DE ? 'de-DE' : 'en-GB');
 
   /* menu */
   const burger = $('.burger');
@@ -65,7 +69,7 @@
       mode = null;
       root.classList.remove('on-call');
       playBtns.forEach(b => b.classList.remove('is-playing'));
-      if (label) label.textContent = 'Play with sound';
+      if (label) label.textContent = T.play;
       drawWave(0, false);
       render(END);
     };
@@ -82,13 +86,13 @@
       player.src = base + audio;
       player.currentTime = 0;
       root.classList.add('on-call');
-      if (label) label.textContent = 'Connecting…';
+      if (label) label.textContent = T.conn;
       playBtns.forEach(x => x.classList.add('is-playing'));
       player.play().then(() => {
         mode = 'audio';
         root.classList.add('on-call');
         playBtns.forEach(b => b.classList.add('is-playing'));
-        if (label) label.textContent = 'Pause';
+        if (label) label.textContent = T.pause;
         render(0);
         raf = requestAnimationFrame(tick);
       }).catch(() => { mode = 'audio'; stopCall(); });
@@ -123,12 +127,11 @@
   /* bill: one line */
   const range = $('#minRange');
   if (range) {
-    const fmt = n => '€' + n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     const bill = () => {
       const m = +range.value, c = m * 0.15;
-      $('#mins').textContent = m.toLocaleString('en-GB');
-      $('#cost').textContent = fmt(c);
-      $('#total').textContent = fmt(c);
+      $('#mins').textContent = num(m);
+      $('#cost').textContent = money(c);
+      $('#total').textContent = money(c);
     };
     range.addEventListener('input', bill); bill();
   }
@@ -138,11 +141,11 @@
   const aC = $('#aClientsR');
   if (aC) {
     const aM = $('#aMinsR'), aP = $('#aPriceR');
-    const eur = n => '€' + Math.round(n).toLocaleString('en-GB');
+    const eur = n => money(Math.round(n), 0);
     const calc = () => {
       const c = +aC.value, m = +aM.value, p = +aP.value, min = c * m;
-      $('#aClients').textContent = c; $('#aMins').textContent = m.toLocaleString('en-GB');
-      $('#aPrice').textContent = '€' + p.toFixed(2);
+      $('#aClients').textContent = c; $('#aMins').textContent = num(m);
+      $('#aPrice').textContent = money(p);
       $('#aBill').textContent = eur(min * p); $('#aCost').textContent = eur(min * 0.15); $('#aMargin').textContent = eur(min * (p - 0.15));
     };
     [aC, aM, aP].forEach(r => r.addEventListener('input', calc)); calc();
