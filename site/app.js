@@ -6,10 +6,10 @@
   const root = document.documentElement;
   const base = root.dataset.base || '';
   const L = root.lang; const DE = L === 'de';
-  const T = { de: { play: 'Mit Ton abspielen', pause: 'Pause', conn: 'Verbinde…' }, nl: { play: 'Afspelen met geluid', pause: 'Pauze', conn: 'Verbinden…' } }[L] || { play: 'Play with sound', pause: 'Pause', conn: 'Connecting…' };
-  const fmtN = (n, d) => n.toLocaleString({ de: 'de-DE', nl: 'nl-NL' }[L] || 'en-GB', { minimumFractionDigits: d, maximumFractionDigits: d });
-  const money = (n, d = 2) => L === 'de' ? fmtN(n, d) + ' €' : L === 'nl' ? '€ ' + fmtN(n, d) : '€' + fmtN(n, d);
-  const num = n => n.toLocaleString({ de: 'de-DE', nl: 'nl-NL' }[L] || 'en-GB');
+  const T = { de: { play: 'Mit Ton abspielen', pause: 'Pause', conn: 'Verbinde…' }, nl: { play: 'Afspelen met geluid', pause: 'Pauze', conn: 'Verbinden…' }, fr: { play: 'Écouter avec le son', pause: 'Pause', conn: 'Connexion…' } }[L] || { play: 'Play with sound', pause: 'Pause', conn: 'Connecting…' };
+  const fmtN = (n, d) => n.toLocaleString({ de: 'de-DE', nl: 'nl-NL', fr: 'fr-FR' }[L] || 'en-GB', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const money = (n, d = 2) => (L === 'de' || L === 'fr') ? fmtN(n, d) + ' €' : L === 'nl' ? '€ ' + fmtN(n, d) : '€' + fmtN(n, d);
+  const num = n => n.toLocaleString({ de: 'de-DE', nl: 'nl-NL', fr: 'fr-FR' }[L] || 'en-GB');
 
   /* menu */
   const burger = $('.burger');
