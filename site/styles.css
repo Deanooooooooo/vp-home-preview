@@ -368,3 +368,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
   .dash-stats b{font-size:20px}
 }
 .lang-switch{font:500 13px/1 var(--mono);color:var(--muted);text-decoration:none;padding:6px 8px;border:1px solid var(--line);border-radius:8px}.lang-switch:hover{color:var(--a1);border-color:var(--a1-soft)}
+/* German depth pass */
+.timeline{border-top:1px solid var(--line)}
+.tl-row{display:grid;grid-template-columns:90px 260px 1fr;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+.tl-row .mono{color:var(--a1);font-size:14px}
+.tl-row b{font-weight:600}
+.tl-row span:last-child{color:var(--ink-2)}
+.rules{display:grid;gap:12px}
+.rule{display:grid;grid-template-columns:60px 1fr 60px 1fr;gap:14px;align-items:baseline;border:1px solid var(--line);border-radius:18px;padding:18px 22px;background:#fff}
+.rule .mono{font-size:12px;color:var(--a2-ink);letter-spacing:.06em}
+.rule b{font-weight:500}
+.ticket-wrap{align-items:center}
+@media (max-width:640px){
+  .tl-row{grid-template-columns:64px 1fr;gap:4px 14px}
+  .tl-row span:last-child{grid-column:2}
+  .rule{grid-template-columns:52px 1fr;gap:6px 10px}
+}

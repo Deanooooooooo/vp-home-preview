@@ -5,7 +5,7 @@ const base = 'http://127.0.0.1:8080/';
 const pages = [];
 (function walk(d) { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (e.name === 'index.html') pages.push(path.relative('site', path.dirname(p)).replace(/\\/g, '/')); } })('site');
 (async () => {
-  const b = await chromium.launch(); const out = []; let fails = 0;
+  const b = await chromium.launch({ args: ['--autoplay-policy=no-user-gesture-required'] }); const out = []; let fails = 0;
   const ok = (n, v, d = '') => { out.push(`${v ? 'PASS' : 'FAIL'} ${n} ${d}`); if (!v) fails++; };
   fs.mkdirSync('shots', { recursive: true });
   for (const pg0 of pages.sort()) {
@@ -37,6 +37,17 @@ const pages = [];
   await p.goto(base + 'ai-receptionist/dental/', { waitUntil: 'load' }); await p.$eval('#call', el => el.scrollIntoView({ block: 'center' })); await p.waitForTimeout(1500);
   const mid = await p.$$eval('#talk li.shown', l => l.length); await p.waitForTimeout(24000); const end = await p.$$eval('#talk li.shown', l => l.length);
   ok('dental silent call plays and completes', mid < 7 && end === 7, `mid ${mid} end ${end}`);
+  // German audio calls play on every page that has one
+  for (const pg of pages.filter(x => x.startsWith('de'))) {
+    const q = await b.newPage({ viewport: { width: 1440, height: 900 } });
+    await q.goto(base + pg + '/', { waitUntil: 'load' });
+    if (await q.$('#call[data-audio]')) {
+      await q.click('.hero [data-play-call]'); await q.waitForTimeout(5000);
+      const st = await q.evaluate(() => { const a = document.querySelector('#player'); return [a.paused, a.currentTime, a.error && a.error.code]; });
+      ok(`/${pg}/ audio plays`, !st[0] && st[1] > 1, JSON.stringify(st));
+    }
+    await q.close();
+  }
   await b.close();
   fs.writeFileSync('qa.log', out.join('\n') + `\n\nfails: ${fails} of ${out.length}\n`); console.log(out.join('\n'), '\nfails', fails);
 })();
