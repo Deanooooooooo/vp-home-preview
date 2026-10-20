@@ -430,3 +430,4 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
   .header-in{position:relative}
 }
 .nav-langs{display:flex;gap:8px;justify-content:center}.nav-langs:empty{display:none}
+.header-cta .btn{white-space:nowrap}
