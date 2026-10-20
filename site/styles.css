@@ -295,3 +295,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .done-urgent .tick{background:var(--a1)}
 @media (max-width:640px){.msg{padding:22px 20px}.msg dl>div{grid-template-columns:84px 1fr;gap:12px}}
 .done-urgent .tick::after{border-color:#fff}
+.price-top{padding-top:20px}
+.price-top .big-price{margin-top:0}
+.doors-2{grid-template-columns:repeat(2,1fr)}
+.center-note{text-align:center;margin-top:18px}
+.compare-3 tbody th{width:34%}
+@media (max-width:980px){.doors-2{grid-template-columns:1fr}}
+@media (max-width:640px){.compare-3 tbody th{width:auto}}
