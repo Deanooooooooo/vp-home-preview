@@ -23,8 +23,8 @@ const pages = [];
         await p.tap('.burger'); await p.waitForTimeout(300);
         ok(`/${pg} menu opens`, await p.evaluate(() => document.body.classList.contains('menu-open')));
       } else {
-        if (await p.$('#minRange')) { await p.$eval('#minRange', el => { el.value = 1000; el.dispatchEvent(new Event('input')); }); { const v = await p.textContent('#total'); ok(`/${pg} slider`, v === '€150.00' || v === '150,00 €', v); } }
-        if (await p.$('#aClientsR')) { { const v = await p.textContent('#aMargin'); ok(`/${pg} agency calc default`, v === '€1,200' || v === '1.200 €', v); } }
+        if (await p.$('#minRange')) { await p.$eval('#minRange', el => { el.value = 1000; el.dispatchEvent(new Event('input')); }); { const v = await p.textContent('#total'); ok(`/${pg} slider`, v === '€150.00' || v === '150,00 €' || v === '€ 150,00', v); } }
+        if (await p.$('#aClientsR')) { { const v = await p.textContent('#aMargin'); ok(`/${pg} agency calc default`, v === '€1,200' || v === '1.200 €' || v === '€ 1.200', v); } }
         if (await p.$('details')) { await p.click('details summary'); ok(`/${pg} faq opens`, await p.$eval('details', d => d.open)); }
         const links = await p.$$eval('a[href]', as => [...new Set(as.map(a => a.href).filter(h => h.startsWith('http://127.0.0.1') && !h.includes('#')))]);
         for (const l of links) { const r = await p.request.get(l); if (r.status() !== 200) ok(`/${pg} link ${l}`, false, r.status()); }
@@ -38,7 +38,7 @@ const pages = [];
   const mid = await p.$$eval('#talk li.shown', l => l.length); await p.waitForTimeout(24000); const end = await p.$$eval('#talk li.shown', l => l.length);
   ok('dental silent call plays and completes', mid < 7 && end === 7, `mid ${mid} end ${end}`);
   // German audio calls play on every page that has one
-  for (const pg of pages.filter(x => x.startsWith('de'))) {
+  for (const pg of pages.filter(x => x.startsWith('de') || x.startsWith('nl'))) {
     const q = await b.newPage({ viewport: { width: 1440, height: 900 } });
     await q.goto(base + pg + '/', { waitUntil: 'load' });
     if (await q.$('#call[data-audio]')) {
