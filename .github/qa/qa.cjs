@@ -25,7 +25,7 @@ const pages = [];
       } else {
         if (await p.$('#minRange')) { await p.$eval('#minRange', el => { el.value = 1000; el.dispatchEvent(new Event('input')); }); { const v = await p.textContent('#total'); ok(`/${pg} slider`, v === '€150.00' || v === '150,00 €' || v === '€ 150,00', v); } }
         if (await p.$('#aClientsR')) { { const v = await p.textContent('#aMargin'); ok(`/${pg} agency calc default`, v === '€1,200' || v === '1.200 €' || v === '€ 1.200' || v === '1\u202f200 €', v); } }
-        if (await p.$('details')) { await p.click('details summary'); ok(`/${pg} faq opens`, await p.$eval('details', d => d.open)); }
+        if (await p.$('details')) { const was = await p.$eval('details', d => d.open); await p.click('details summary'); ok(`/${pg} faq toggles`, (await p.$eval('details', d => d.open)) !== was); }
         const links = await p.$$eval('a[href]', as => [...new Set(as.map(a => a.href).filter(h => h.startsWith('http://127.0.0.1') && !h.includes('#')))]);
         for (const l of links) { const r = await p.request.get(l); if (r.status() !== 200) ok(`/${pg} link ${l}`, false, r.status()); }
       }

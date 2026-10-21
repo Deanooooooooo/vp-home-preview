@@ -1,6 +1,6 @@
 (() => {
   // hero headline: word-by-word reveal, keeps two-tone spans
-  const h1 = document.querySelector(".hero h1");
+  const h1 = document.querySelector(".v5-hero h1");
   if (h1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const label = h1.textContent.replace(/\s+/g, " ").trim();
     let n = 0;
@@ -142,7 +142,7 @@
     b.innerHTML = `<span class="lang-code"><span>${l.c[0].toUpperCase()}</span><span>${l.c[1].toUpperCase()}</span></span>
       <span class="lang-name">${l.native}</span><span class="lang-city">${l.city}</span>
       <span class="lang-text" lang="${l.c}">${l.text.split(" ").map(w => `<span class="k">${w}</span>`).join(" ")}</span>
-      <span class="lang-play"><span class="play-ico" aria-hidden="true"></span>Listen</span>`;
+      <span class="lang-play"><span class="v5-play-ico" aria-hidden="true"></span>Listen</span>`;
     b.addEventListener("click", () => { stopCycle(); play(l.c); const bi = BOARD.findIndex(x => x.c === l.c); if (bi > -1) show(bi); });
     grid.appendChild(b);
   });

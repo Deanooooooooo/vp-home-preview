@@ -20,8 +20,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="fonts.css?v=104135">
-<link rel="stylesheet" href="styles.css?v=104135">
+<link rel="stylesheet" href="fonts.css?v=771289">
+<link rel="stylesheet" href="styles.css?v=771289">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://deanooooooooo.github.io/vp-home-preview/site/#org","name":"Allovo","url":"https://deanooooooooo.github.io/vp-home-preview/site/"},{"@type":"WebPage","@id":"https://deanooooooooo.github.io/vp-home-preview/site/","url":"https://deanooooooooo.github.io/vp-home-preview/site/","inLanguage":"en","name":"AI Voice Agents That Answer Every Call | Allovo","description":"Allovo's AI voice agents answer your business calls, book appointments, take orders and send you a summary. Live the same afternoon, €0.15 a minute.","isPartOf":{"@type":"WebSite","name":"Allovo","url":"https://deanooooooooo.github.io/vp-home-preview/site/"}},{"@type":"Service","name":"AI voice agent","provider":{"@id":"https://deanooooooooo.github.io/vp-home-preview/site/#org"},"areaServed":"Europe","offers":{"@type":"Offer","priceCurrency":"EUR","price":"0.15","unitText":"minute"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can my business use Allovo directly, without an agency?","acceptedAnswer":{"@type":"Answer","text":"Yes. Sign up, build your agent from a template, connect a phone number and go live. If you would rather have it set up for you, a partner agency can do it."}},{"@type":"Question","name":"What is a white-label voice AI platform?","acceptedAnswer":{"@type":"Answer","text":"It is the engine behind AI phone agents that an agency sells under its own name. Allovo runs the calls, voices and language model; your clients only see your brand, your domain and your invoices."}},{"@type":"Question","name":"Which languages can my agents speak?","acceptedAnswer":{"@type":"Answer","text":"The ten languages you can hear on this page: English, Dutch, German, French, Spanish, Italian, Polish, Bulgarian, Romanian and Swedish. Each one uses a voice built for that language, not an English voice reading a translation."}},{"@type":"Question","name":"Where is call data processed and stored?","acceptedAnswer":{"@type":"Answer","text":"Inside the European Union. Speech recognition, the language model, the voice and storage all run in EU regions, and the sub-processor list names every company and region."}},{"@type":"Question","name":"How much does Allovo cost?","acceptedAnswer":{"@type":"Answer","text":"One price per minute with speech, language model, voice and platform included. Phone numbers are charged at cost. There is no monthly platform fee."}},{"@type":"Question","name":"Can I move agents from Retell or Vapi?","acceptedAnswer":{"@type":"Answer","text":"Yes. Import an agent’s prompt, tools and settings, test it side by side, then point the phone number to Allovo when you are happy."}},{"@type":"Question","name":"How fast can a business go live?","acceptedAnswer":{"@type":"Answer","text":"Most businesses go live the same day: pick a template, describe your business, connect your calendar and forward your number."}},{"@type":"Question","name":"Is there an API?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything in the dashboard is in the REST API, with webhooks for every call event and SIP trunking for your own carrier."}},{"@type":"Question","name":"Will my clients see the Allovo name?","acceptedAnswer":{"@type":"Answer","text":"No. The dashboard, login page, emails and invoices carry your name, logo, colours and domain."}}]}]}</script>
 </head>
 <body class="">
@@ -58,26 +58,26 @@
 <main id="top">
 
 <!-- 1 HOOK -->
-<section class="hero">
+<section class="v5-hero">
   <div class="mesh" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="grain"></span></div>
   <canvas class="ribbon" id="ribbon" aria-hidden="true"></canvas>
-  <div class="wrap hero-grid">
+  <div class="v5-wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Voice AI platform · built in the EU</p>
       <h1>The European voice AI platform. <span class="dim">Phone agents that sound local.</span></h1>
-      <p class="lede">Build an AI receptionist for your business, or sell voice agents under your own brand. Native voices in ten languages, data kept in the EU, one price per&nbsp;minute.</p>
+      <p class="v5-lede">Build an AI receptionist for your business, or sell voice agents under your own brand. Native voices in <a href="languages/">ten languages</a>, <a href="security/">data kept in the EU</a>, one price per&nbsp;minute.</p>
       <div class="hero-actions">
-        <a class="btn btn-signal btn-lg" href="#start">Build your agent</a>
-        <a class="btn btn-ghost btn-lg" href="#white-label">White label for agencies</a>
+        <a class="v5-btn btn-signal v5-btn-lg" href="#start">Build your agent</a>
+        <a class="v5-btn btn-ghost v5-btn-lg" href="#white-label">White label for agencies</a>
       </div>
-      <p class="micro"><button class="text-btn" type="button" data-play-current><span class="play-ico" aria-hidden="true"></span> Hear a sample call</button> · 60 free minutes · no card</p>
+      <p class="micro"><button class="v5-text-btn" type="button" data-play-current><span class="v5-play-ico" aria-hidden="true"></span> Hear a sample call</button> · 60 free minutes · no card</p>
     </div>
 
     <div class="board-wrap">
       <div class="board" id="board" aria-label="Sample greetings in European languages">
         <div class="board-head">
           <span>Sample greetings</span>
-          <span class="live"><i></i>EU voices</span>
+          <span class="v5-live"><i></i>EU voices</span>
         </div>
         <div class="board-main">
           <div class="flaps flaps-city" id="flapCity" aria-hidden="true"></div>
@@ -86,7 +86,7 @@
         <p class="board-line" id="boardLine"></p>
         <div class="board-player">
           <button class="play-btn" type="button" id="boardPlay" aria-label="Play this greeting">
-            <span class="play-ico" aria-hidden="true"></span>
+            <span class="v5-play-ico" aria-hidden="true"></span>
           </button>
           <div class="bars" id="bars" aria-hidden="true"></div><canvas class="scope" id="scope" aria-hidden="true"></canvas>
           <span class="board-meta" id="boardMeta"></span>
@@ -105,29 +105,29 @@
 
 <!-- 2 WHO -->
 <section class="who" id="who">
-  <div class="wrap">
+  <div class="v5-wrap">
     <div class="section-head">
       <p class="eyebrow">Who it’s for</p>
       <h2>One platform. <span class="dim">Three ways in.</span></h2>
     </div>
     <div class="who-grid">
-      <a class="who-card" href="#how">
+      <a class="who-card" href="ai-receptionist/">
         <div class="vig" aria-hidden="true"><div class="vig-cal"><span class="vig-day">Thu</span><span class="vig-slot">10:30</span><span class="vig-ok">Booked</span></div><div class="vig-cal vig-cal-2"><span class="vig-day">Thu</span><span class="vig-slot">11:15</span><span class="vig-free">Free</span></div></div>
-        <span class="tag">For businesses</span>
+        <span class="v5-tag">For businesses</span>
         <h3>An AI receptionist that answers every call.</h3>
         <p>Takes calls day and night, answers questions, books appointments in your calendar and sends you a summary. Live in an afternoon.</p>
-        <span class="who-link">How it works</span>
+        <span class="who-link">See the AI receptionist</span>
       </a>
-      <a class="who-card" href="#white-label">
+      <a class="who-card" href="agencies/">
         <div class="vig" aria-hidden="true"><div class="vig-brand"><i style="background:#2E46F0"></i><i style="background:#0F8A6A"></i><i style="background:#D61F69"></i><span>app.youragency.eu</span></div></div>
-        <span class="tag">For agencies</span>
+        <span class="v5-tag">For agencies</span>
         <h3>Sell voice agents under your own brand.</h3>
         <p>Your logo, domain and invoices. A sub-account per client, your own price per minute, your margin on every call.</p>
         <span class="who-link">See white label</span>
       </a>
-      <a class="who-card" href="#developers">
+      <a class="who-card" href="developers/">
         <div class="vig" aria-hidden="true"><div class="vig-code"><b>POST</b> /v1/calls <em>201</em></div></div>
-        <span class="tag">For developers</span>
+        <span class="v5-tag">For developers</span>
         <h3>An API for voice agents, hosted in the EU.</h3>
         <p>Create agents and calls over REST, get events by webhook, bring your own SIP trunk, import agents from Retell or Vapi.</p>
         <span class="who-link">See the API</span>
@@ -138,7 +138,7 @@
 
 <!-- 3 TENSION -->
 <section class="tension">
-  <div class="wrap">
+  <div class="v5-wrap">
     <h2 class="h2-light">Your callers don’t speak <span class="dim">American English.</span></h2>
     <div class="tension-grid">
       <article>
@@ -154,7 +154,7 @@
       <article>
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>
         <h3>Five vendors, five invoices, a cost that moves.</h3>
-        <p>Phone line, speech, model, voice and platform usually bill separately. We put them in one price per minute, so you know what a call costs before it happens.</p>
+        <p>Phone line, speech, model, voice and platform usually bill separately. We put them in one <a href="pricing/">price per minute</a>, so you know what a call costs before it happens.</p>
       </article>
     </div>
   </div>
@@ -162,7 +162,7 @@
 
 <!-- 3 PROOF BY EAR -->
 <section class="bench" id="languages">
-  <div class="wrap">
+  <div class="v5-wrap">
     <div class="bench-top">
       <div class="section-head">
       <p class="eyebrow">Languages</p>
@@ -176,8 +176,8 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="steps" id="how">
-  <div class="wrap how-grid">
+<section class="v5-steps" id="how">
+  <div class="v5-wrap how-grid">
     <div class="how-copy">
       <p class="eyebrow">How it works</p>
       <h2><span class="nb">Build it.</span> <span class="nb">Connect it.</span> <span class="dim nb">It answers.</span></h2>
@@ -186,7 +186,7 @@
         <div><dt>Connect</dt><dd>Get a local number or forward the line you have. Connect your calendar so it can book, move and cancel.</dd></div>
         <div><dt>Answer</dt><dd>It picks up in the caller’s language, handles what it can, passes the rest to a person and sends you a summary.</dd></div>
       </dl>
-      <a class="btn btn-signal btn-lg steps-cta" href="#start" data-signup>Build your agent</a>
+      <a class="v5-btn btn-signal v5-btn-lg steps-cta" href="#start" data-signup>Build your agent</a>
     </div>
     <div class="callcard" aria-label="Example call, Dutch dental practice">
       <div class="cc-head"><span class="cc-dot"></span><span>Incoming call · +31 20 555 0134</span><span class="cc-time" id="ccTime">00:00</span></div>
@@ -212,7 +212,7 @@
 
 <!-- WHITE LABEL -->
 <section class="studio" id="white-label">
-  <div class="wrap studio-grid">
+  <div class="v5-wrap studio-grid">
     <div class="studio-controls">
       <p class="eyebrow">For agencies</p>
       <h2>Your name on everything. <span class="dim">Never ours.</span></h2>
@@ -255,10 +255,10 @@
           <table class="app-table">
             <thead><tr><th>Client</th><th>Lang</th><th>Minutes</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td>De Vries Tandartsen</td><td>NL</td><td>2,140</td><td><span class="pill">Live</span></td></tr>
-              <tr><td>Bäckerei Krüger</td><td>DE</td><td>1,385</td><td><span class="pill">Live</span></td></tr>
-              <tr><td>Cabinet Martin</td><td>FR</td><td>3,020</td><td><span class="pill">Live</span></td></tr>
-              <tr><td>Hotel Stella</td><td>IT</td><td>2,935</td><td><span class="pill pill-test">Testing</span></td></tr>
+              <tr><td>De Vries Tandartsen</td><td>NL</td><td>2,140</td><td><span class="v5-pill">Live</span></td></tr>
+              <tr><td>Bäckerei Krüger</td><td>DE</td><td>1,385</td><td><span class="v5-pill">Live</span></td></tr>
+              <tr><td>Cabinet Martin</td><td>FR</td><td>3,020</td><td><span class="v5-pill">Live</span></td></tr>
+              <tr><td>Hotel Stella</td><td>IT</td><td>2,935</td><td><span class="v5-pill pill-test">Testing</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -269,19 +269,19 @@
 
 <!-- DEVELOPERS -->
 <section class="dev" id="developers">
-  <div class="wrap dev-grid">
+  <div class="v5-wrap dev-grid">
     <div>
       <p class="eyebrow">For developers</p>
       <h2>Everything in the dashboard. <span class="dim">Also in the API.</span></h2>
-      <p class="dev-lede">Create agents, start outbound calls and read transcripts over REST. Webhooks for every call event, your own SIP trunk if you have one, and an importer for Retell and Vapi agents.</p>
+      <p class="dev-lede">Create agents, start outbound calls and read transcripts over REST. Webhooks for every call event, your own SIP trunk if you have one, and an importer for <a href="vs/retell-ai/">Retell</a> and Vapi agents.</p>
       <ul class="ticks">
         <li>REST API and webhooks</li>
         <li>SIP trunking and number porting</li>
         <li>Import agents from Retell or Vapi</li>
       </ul>
-      <a class="btn btn-signal btn-lg dev-cta" href="#start" data-signup>Get an API key</a>
+      <a class="v5-btn btn-signal v5-btn-lg dev-cta" href="#start" data-signup>Get an API key</a>
     </div>
-    <pre class="code" aria-label="Example API request"><code><span class="c-mute"># Start an outbound call in Dutch</span>
+    <pre class="v5-code" aria-label="Example API request"><code><span class="c-mute"># Start an outbound call in Dutch</span>
 <span class="c-k">curl</span> https://api.allovo.eu/v1/calls \
   -H <span class="c-s">"Authorization: Bearer $ALLOVO_KEY"</span> \
   -d '{
@@ -297,7 +297,7 @@
 </section>
 
 <section class="pricing" id="pricing">
-  <div class="wrap pricing-grid">
+  <div class="v5-wrap pricing-grid">
     <div class="price-card">
       <p class="eyebrow">Pricing</p>
       <h2>One price per minute. <span class="dim">Everything included.</span></h2>
@@ -309,10 +309,10 @@
         <li>Spend cap and an alert at 80%</li>
       </ul>
       <p class="price-example">Example: a practice that takes 600 minutes of calls a month pays €90.</p>
-      <a class="btn btn-signal btn-lg" href="#start">Start free with 60 minutes</a>
+      <a class="v5-btn btn-signal v5-btn-lg" href="#start">Start free with 60 minutes</a>
     </div>
 
-    <div class="calc" aria-label="Margin calculator">
+    <div class="v5-calc" aria-label="Margin calculator">
       <h3>For agencies: what you keep each month</h3>
       <label class="range">
         <span>Clients <output id="oClients">10</output></span>
@@ -327,7 +327,7 @@
         <input type="range" id="rPrice" min="0.15" max="0.60" step="0.01" value="0.30">
       </label>
       <div class="calls-viz" aria-hidden="true"><div class="calls-grid" id="callsGrid"></div><p class="calls-cap"><span id="callsTotal">8,000</span> minutes of calls a month · each dot is 100 minutes</p></div>
-      <div class="calc-out">
+      <div class="v5-calc-out">
         <div><span>You bill</span><b id="cRevenue">€2,400</b></div>
         <div><span>We bill you</span><b id="cCost">€1,200</b></div>
         <div class="calc-margin"><span>Your margin</span><b id="cMargin">€1,200</b></div>
@@ -338,8 +338,8 @@
 </section>
 
 <!-- 8 CLOSE -->
-<section class="faq" id="faq">
-  <div class="wrap faq-grid">
+<section class="v5-faq" id="faq">
+  <div class="v5-wrap faq-grid">
     <div class="section-head">
       <p class="eyebrow">Questions</p>
       <h2>Straight <span class="dim">answers.</span></h2>
@@ -360,17 +360,17 @@
 
 <section class="closer" id="start">
   <div class="mesh" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="grain"></span></div>
-  <div class="wrap closer-in">
-    <button class="orb" id="orb" type="button" aria-label="Hear Mila say hello in English"><canvas id="orbCanvas" aria-hidden="true"></canvas><span class="orb-core"><span class="play-ico" aria-hidden="true"></span></span></button>
+  <div class="v5-wrap closer-in">
+    <button class="orb" id="orb" type="button" aria-label="Hear Mila say hello in English"><canvas id="orbCanvas" aria-hidden="true"></canvas><span class="orb-core"><span class="v5-play-ico" aria-hidden="true"></span></span></button>
     <p class="orb-cap">Tap to hear Mila</p>
     <div class="closer-flaps" aria-hidden="true" id="closerFlaps" hidden></div>
     <h2>Every call answered, in your caller’s language.</h2>
     <p>Build your first agent today. 60 free minutes, no card.</p>
     <div class="hero-actions">
-      <a class="btn btn-signal btn-lg" href="#start" data-signup>Build your agent</a>
-      <a class="btn btn-ghost-dark btn-lg" href="#white-label">White label for agencies</a>
+      <a class="v5-btn btn-signal v5-btn-lg" href="#start" data-signup>Build your agent</a>
+      <a class="v5-btn btn-ghost-dark v5-btn-lg" href="#white-label">White label for agencies</a>
     </div>
-    <p class="signup-note" id="signupNote" role="status" hidden>Sign-up opens at launch. This is a preview.</p>
+    <p class="v5-signup-note" id="signupNote" role="status" hidden>Sign-up opens at launch. This is a preview.</p>
   </div>
 </section>
 
@@ -380,7 +380,7 @@
   <span class="mp-code" id="mpCode">NL</span>
   <span class="mp-text"><b id="mpCity">Amsterdam</b><em id="mpLang">Dutch</em></span>
   <canvas class="mp-wave" id="mpWave" aria-hidden="true"></canvas>
-  <button class="mp-btn" id="mpToggle" type="button" aria-label="Pause"><span class="play-ico" aria-hidden="true"></span></button>
+  <button class="mp-btn" id="mpToggle" type="button" aria-label="Pause"><span class="v5-play-ico" aria-hidden="true"></span></button>
   <button class="mp-close" id="mpClose" type="button" aria-label="Stop and close">×</button>
 </div>
 </div>
@@ -410,6 +410,6 @@
 </footer>
 
 <audio id="player" preload="none"></audio>
-<script src="app.js?v=104135"></script>
+<script src="app.js?v=771289"></script>
 </body>
 </html>

@@ -431,3 +431,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 }
 .nav-langs{display:flex;gap:8px;justify-content:center}.nav-langs:empty{display:none}
 .header-cta .btn{white-space:nowrap}
+.related-links{padding-top:0}
+.related{max-width:760px;margin:0 auto;font-size:17px;line-height:1.7;color:var(--ink-2)}
+.related a{color:var(--a1);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.related a:hover{text-decoration-thickness:2px}
